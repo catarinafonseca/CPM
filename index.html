@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 </head>
+
 <body>
 
-<a-scene>
-    <a-assets>
-        <img id="earth" src="images/earth.jpg">
-        <img id="moon" src="images/moon.jpg">
+    <a-scene>
+        <a-assets>
+            <img id="earth" src="images/earth.jpg">
+            <img id="moon" src="images/moon.jpg">
+            <img id="mars" src="images/mars.jpg">
+            <img id="neptune" src="images/neptune.jpg">
+            <img id="saturn" src="images/saturn.jpg">
+            <img id="sun" src="images/sun.png">
+            <img id="uranus" src="images/uranus.jpg">
+            <img id="venus" src="images/venus.jpg">
+            <img id="jupiter" src="images/jupiter.jpg">
+            <img id="saturn-ring" src="images/saturn_ring.png">
+            <img id="milky_way" src="images/stars_milky_way.jpg">
+            <img id="mercury" src="images/mercury.jpg">
         </a-assets>
-  <a-sphere src="#earth" radius="2" segments-height="84" position="-1 1 0" >
-   </a-sphere> 
-   <a-sphere src="#moon" radius="2" segments-height="84" position="4 1 0">
-</a-sphere> 
- 
-  <a-camera position='0 0 3' user-height='0'></a-camera>
- <a-sky color='darkgrey'></a-sky> 
-</a-scene>
+        <a-sphere src="#earth" radius="2" segments-height="84" position="-1 1 0">
+        </a-sphere>
+        <a-sphere src="#moon" radius="2" segments-height="84" position="2 3 0" scale=" 0.15 0.15 0.15">
+        </a-sphere>
+        <a-sphere src="#sun" radius="2" segments-height="84" position="-20 1 0" scale=" 2 2 2">
+        </a-sphere>
+        <a-sphere src="#mercury" radius="2" segments-height="84" position="-12 1 0" scale=" 0.5 0.5 0.5">
+        </a-sphere>
+        <a-sphere src="#venus" radius="2" segments-height="84" position="-7 1 0" >
+        </a-sphere>
+
+        <a-camera position='0 0 3' user-height='0'></a-camera>
+        <a-sky src="#milky_way"></a-sky>
+    </a-scene>
 </body>
+
 </html>
