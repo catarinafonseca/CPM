@@ -26,7 +26,7 @@
             <img id="mercury" src="images/mercury.jpg">
         </a-assets>
         <!--SOL-->
-        <a-sphere src="#sun" radius="4" segments-height="84" position="-20 1 0" scale=" 2 2 2">
+        <a-sphere src="#sun" radius="4" segments-height="84" position="-20 -5 0" scale=" 2 2 2">
         </a-sphere>
 
         <!--MERCÚRIO-->
@@ -48,8 +48,10 @@
         </a-sphere>
 
         <!--SATURNO-->
-        <a-sphere src="#saturn" radius="2.5" segments-height="84" position="19 1 0">
+        <a-sphere src="#saturn" radius="2.5" segments-height="84" position="19 -10 0">
         </a-sphere>
+        <a-entity geometry="primitive: torus; radius: 4; radiusTubular: 0.1;segmentsTubular: 50" material="color: #57524A;" position="19 -10 0" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+        <a-entity geometry="primitive: torus; radius: 3.2; radiusTubular: 0.2;segmentsTubular: 50" material="color: #A29A87;" position="19 -10 0" rotation="90 0 0" scale="1 1 0.1"></a-entity>
 
         <!--URANO-->
         <a-sphere src="#uranus" radius="1.8" segments-height="84" position="26 1 0">
