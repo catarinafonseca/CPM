@@ -25,9 +25,15 @@
             <img id="milky_way" src="images/stars_milky_way.jpg">
             <img id="mercury" src="images/mercury.jpg">
         </a-assets>
+
+        <!--FUNDO-->
+        <a-camera position='0 0 3' user-height='0'></a-camera>
+        <a-sky src="#milky_way"></a-sky>
+
+        <!--PLANETAS-->
+        
         <!--SOL-->
         <a-sphere src="#sun" radius="4" segments-height="84" position="-20 -10 -35" scale=" 2 2 2">
-            <!--<a-entity light="color: #F28705; intensy: 1.5; type: point"></a-entity>-->
             <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="35000" repeat="indefinite" easing="linear">
             </a-animation>
         </a-sphere>
@@ -127,13 +133,6 @@
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
 
 
-
-
-
-        <a-camera position='0 0 3' user-height='0'></a-camera>
-        <a-sky src="#milky_way">
-
-        </a-sky>
     </a-scene>
 </body>
 
