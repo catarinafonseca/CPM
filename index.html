@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 </head>
 
 <body>
-
     <a-scene>
         <a-assets>
             <img id="earth" src="images/earth.jpg">
@@ -27,58 +26,50 @@
         </a-assets>
 
         <!--FUNDO-->
-        <a-camera position='0 0 3' user-height='0'></a-camera>
+        <!-- Camera -->
+        <a-entity position="0 3 8">
+            <a-camera></a-camera>
+        </a-entity>
         <a-sky src="#milky_way"></a-sky>
 
+
         <!--PLANETAS-->
-        
+
         <!--SOL-->
-        <a-sphere src="#sun" radius="4" segments-height="84" position="-20 -10 -35" scale=" 2 2 2">
-            <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="35000" repeat="indefinite" easing="linear">
-            </a-animation>
+        <a-sphere src="#sun" radius="4" segments-height="84" position="-20 -10 -35" scale=" 2 2 2" animation="property: rotation;
+        to: 0 -360 0;
+        loop: true;
+        dur: 35000;
+        easing: linear">
         </a-sphere>
 
         <!--MERCÚRIO-->
         <a-sphere src="#mercury" radius="2" segments-height="84" position="-7 -10 -35" scale=" 0.5 0.5 0.5">
-            <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="40000" repeat="forwards" easing="linear"
-                repeat="indefinite">
             </a-animation>
         </a-sphere>
 
         <!--VÉNUS-->
         <a-sphere src="#venus" radius="2" segments-height="84" position="-2 -10 -35">
-            <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="40000" repeat="forwards" easing="linear"
-                repeat="indefinite">
             </a-animation>
         </a-sphere>
 
         <!--TERRA-->
         <a-sphere src="#earth" radius="2" segments-height="84" position="4 -10 -35">
-            <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="50000" repeat="forwards" easing="linear"
-                repeat="indefinite">
             </a-animation>
         </a-sphere>
         <a-sphere src="#moon" radius="2" segments-height="84" position="6 -7 -35" scale=" 0.15 0.15 0.15">
-            <a-animation attribute="rotation" to="0 360 0" dur="25000" fill="forwards" easing="linear"
-                repeat="indefinite"></a-animation>
         </a-sphere>
 
         <!--MARTE-->
         <a-sphere src="#mars" radius="2" segments-height="84" position="11 -10 -35">
-            <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="15000" repeat="indefinite" easing="linear">
-            </a-animation>
         </a-sphere>
 
         <!--JÚPITER-->
         <a-sphere src="#jupiter" radius="3" segments-height="84" position="19 -10 -35">
-            <a-animation attribute="rotation" to="0 360 0" dur="60000" fill="forwards" easing="linear"
-                repeat="indefinite"></a-animation>
         </a-sphere>
 
         <!--SATURNO-->
         <a-sphere src="#saturn" radius="2.5" segments-height="84" position="29 -10 -35">
-            <a-animation attribute="rotation" to="0 360 0" dur="65000" fill="forwards" easing="linear"
-                repeat="indefinite"></a-animation>
         </a-sphere>
         <!--ARCO GRANDE-->
         <a-entity geometry="primitive: torus; radius: 4; radiusTubular: 0.1;segmentsTubular: 50"
@@ -87,21 +78,15 @@
         <a-entity geometry="primitive: torus; radius: 3.2; radiusTubular: 0.2;segmentsTubular: 50"
             material="color: #A29A87;" position="29 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
 
-
         <!--URANO-->
         <a-sphere src="#uranus" radius="1.8" segments-height="84" position="39 -10 -35">
-            <a-animation attribute="rotation" to="0 360 0" dur="70000" fill="forwards" easing="linear"
-                repeat="indefinite"></a-animation>
         </a-sphere>
         <!--ARCO-->
         <a-entity geometry="primitive: torus; radius: 2.5; radiusTubular: 0.01;segmentsTubular: 50"
             material="color: #FFFFFF;" position="39 -10 -35" rotation="-10 90 0" scale="1 1 0.1"></a-entity>
 
-
         <!--NEPTUNO-->
         <a-sphere src="#neptune" radius="1.5" segments-height="84" position="48 -10 -35">
-            <a-animation attribute="rotation" to="0 360 0" dur="75000" fill="forwards" easing="linear"
-                repeat="indefinite"></a-animation>
         </a-sphere>
         <!--ARCOS-->
         <a-entity geometry="primitive: torus; radius: 3; radiusTubular: 0.01;segmentsTubular: 50"
@@ -114,7 +99,7 @@
             material="color: #FFFFFF;opacity: 0.8" position="48 -10 -35" rotation="45 45 45" scale="1 1 0.1">
         </a-entity>
 
-        <!--ORBITAS DE CADA PLANETA-->
+        <!--ORBITAS DE CADA PLANETA
         <a-entity geometry="primitive: torus; radius: 12; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 17; radiusTubular: 0.03;segmentsTubular: 50"
@@ -131,7 +116,7 @@
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 67; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
-
+        -->
 
     </a-scene>
 </body>
