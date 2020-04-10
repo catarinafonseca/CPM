@@ -26,13 +26,13 @@
         </a-assets>
 
         <!--FUNDO-->
-        <!-- Camera -->
-        <a-entity position="0 0 8">
+        <!-- Camera     40 0 8    -20 33 -35-->
+        <a-entity position="-14 0 40">
             <a-camera></a-camera>
         </a-entity>
         <a-sky src="#milky_way"></a-sky>
         <!--  Título -->
-        <a-entity geometry="primitive: plane; width: 8; height: 2" position="0 7 0" material=" opacity:0;" text=" width: 30;
+        <a-entity geometry="primitive: plane; width: 8; height: 2" position="-21 17 17" material=" opacity:0;" text=" width: 30;
         font:https://cdn.aframe.io/fonts/mozillavr.fnt;
         color:#D989B5;
         align: center;
@@ -56,7 +56,7 @@
         loop: true;
         dur: 5000;
         easing: linear">
-            <a-sphere src="#mercury" radius="2" position="1 0 -11" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere src="#mercury" radius="2" position="6 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 40000;
@@ -79,14 +79,12 @@
         </a-entity>
 
         <!--TERRA-->
-        <a-entity position="-20 -10 -35"
-            animation="property: rotation; 
+        <a-entity position="-20 -10 -35" animation="property: rotation; 
             to: 0 360 0; 
             loop: true; 
             dur: 5000; 
             easing: linear">
-            <a-sphere src="#earth" radius="2" position="20 0 -10"
-                animation="property: rotation; 
+            <a-sphere src="#earth" radius="2" position="20 0 -10" animation="property: rotation; 
                 to: 0 -360 0; 
                 loop: true; 
                 dur: 5000; 
@@ -97,12 +95,12 @@
         </a-entity>
 
         <!--MARTE-->
-        <a-entity position="11 -10 -35" animation="property: rotation;
-                                to: 0 0 0;
+        <a-entity position="-20 -10 -35" animation="property: rotation;
+                                to: 0 360 0;
                                 loop: true;
-                                dur: 15000;
+                                dur: 5000;
                                 easing: linear">
-            <a-sphere src="#mars" radius="3" position="0 0 0" animation="property: rotation;
+            <a-sphere src="#mars" radius="3" position="28 0 -10" animation="property: rotation;
             to: 0 -360 0;
             loop: true;
             dur: 15000;
@@ -111,64 +109,89 @@
         </a-entity>
 
         <!--JÚPITER-->
-        <a-sphere src="#jupiter" radius="3" segments-height="84" position="19 -10 -35" animation="property: rotation;
-        to: 0 -360 0;
+        <a-entity position="-20 -10 -35" animation="property: rotation;
+        to: 0 360 0;
         loop: true;
-        dur: 60000;
+        dur: 5000;
         easing: linear">
-        </a-sphere>
+            <a-sphere src="#jupiter" radius="3" position="37 0 -10" animation="property: rotation;
+                to: 0 -360 0;
+                loop: true;
+                dur: 60000;
+                easing: linear">
+            </a-sphere>
+        </a-entity>
 
         <!--SATURNO-->
-        <a-sphere src="#saturn" radius="2.5" segments-height="84" position="29 -10 -35" animation="property: rotation;
-        to: 0 -360 0;
+        <a-entity position="-20 -10 -35" animation="property: rotation;
+        to: 0 360 0;
         loop: true;
-        dur: 65000;
+        dur: 5000;
         easing: linear">
-        </a-sphere>
-        <!--ARCO GRANDE-->
-        <a-entity geometry="primitive: torus; radius: 4; radiusTubular: 0.1;segmentsTubular: 50"
-            material="color: #57524A;" position="29 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
-        <!--ARCO PEQUENO-->
-        <a-entity geometry="primitive: torus; radius: 3.2; radiusTubular: 0.2;segmentsTubular: 50"
-            material="color: #A29A87;" position="29 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+            <a-sphere src="#saturn" radius="2.5" position="48 0 -10" animation="property: rotation;
+                to: 0 -360 0;
+                loop: true;
+                dur: 65000;
+                easing: linear">
+            </a-sphere>
+
+            <!--ARCO GRANDE-->
+            <a-entity geometry="primitive: torus; radius: 4; radiusTubular: 0.1;segmentsTubular: 50"
+                material="color: #57524A;" position="48 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+            <!--ARCO PEQUENO-->
+            <a-entity geometry="primitive: torus; radius: 3.2; radiusTubular: 0.2;segmentsTubular: 50"
+                material="color: #A29A87;" position="48 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+        </a-entity>
 
         <!--URANO-->
-        <a-sphere src="#uranus" radius="1.8" segments-height="84" position="39 -10 -35" animation="property: rotation;
-        to: 0 -360 0;
+        <a-entity position="-20 -10 -35" animation="property: rotation;
+        to: 0 360 0;
         loop: true;
-        dur: 70000;
+        dur: 5000;
         easing: linear">
-        </a-sphere>
-        <!--ARCO-->
-        <a-entity geometry="primitive: torus; radius: 2.5; radiusTubular: 0.01;segmentsTubular: 50"
-            material="color: #FFFFFF;" position="39 -10 -35" rotation="-10 90 0" scale="1 1 0.1"></a-entity>
+            <a-sphere src="#uranus" radius="1.8" position="57 0 -10" animation="property: rotation;
+                to: 0 -360 0;
+                loop: true;
+                dur: 70000;
+                easing: linear">
+            </a-sphere>
+            <!--ARCO-->
+            <a-entity geometry="primitive: torus; radius: 2.5; radiusTubular: 0.01;segmentsTubular: 50"
+                material="color: #FFFFFF;" position="57 0 -10" rotation="-10 90 0" scale="1 1 0.1"></a-entity>
+        </a-entity>
 
         <!--NEPTUNO-->
-        <a-sphere src="#neptune" radius="1.5" segments-height="84" position="48 -10 -35" animation="property: rotation;
-        to: 0 -360 0;
+        <a-entity position="-20 -10 -35" animation="property: rotation;
+        to: 0 360 0;
         loop: true;
-        dur: 75000;
+        dur: 5000;
         easing: linear">
-        </a-sphere>
-        <!--ARCOS-->
-        <a-entity geometry="primitive: torus; radius: 3; radiusTubular: 0.01;segmentsTubular: 50"
-            material="color: #FFFFFF;opacity: 0.5" position="48 -10 -35" rotation="45 45 45" scale="1 1 0.1">
-        </a-entity>
-        <a-entity geometry="primitive: torus; radius: 2.7; radiusTubular: 0.05;segmentsTubular: 50"
-            material="color: #FFFFFF;opacity: 0.5" position="48 -10 -35" rotation="45 45 45" scale="1 1 0.1">
-        </a-entity>
-        <a-entity geometry="primitive: torus; radius: 2.3; radiusTubular: 0.01;segmentsTubular: 50"
-            material="color: #FFFFFF;opacity: 0.8" position="48 -10 -35" rotation="45 45 45" scale="1 1 0.1">
+            <a-sphere src="#neptune" radius="1.5" segments-height="84" position="66.5 0 -10" animation="property: rotation;
+                to: 0 -360 0;
+                loop: true;
+                dur: 75000;
+                easing: linear">
+            </a-sphere>
+            <!--ARCOS-->
+            <a-entity geometry="primitive: torus; radius: 3; radiusTubular: 0.01;segmentsTubular: 50"
+                material="color: #FFFFFF;opacity: 0.5" position="66.5 0 -10" rotation="45 45 45" scale="1 1 0.1">
+            </a-entity>
+            <a-entity geometry="primitive: torus; radius: 2.7; radiusTubular: 0.05;segmentsTubular: 50"
+                material="color: #FFFFFF;opacity: 0.5" position="66.5 0 -10" rotation="45 45 45" scale="1 1 0.1">
+            </a-entity>
+            <a-entity geometry="primitive: torus; radius: 2.3; radiusTubular: 0.01;segmentsTubular: 50"
+                material="color: #FFFFFF;opacity: 0.8" position="66.5 0 -10" rotation="45 45 45" scale="1 1 0.1">
+            </a-entity>
         </a-entity>
 
         <!--ORBITAS DE CADA PLANETA-->
         <a-entity geometry="primitive: torus; radius: 12; radiusTubular: 0.03;segmentsTubular: 50"
-            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="0.9 1 1"></a-entity>
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 17; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 23; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
-        <!--<a-entity geometry="primitive: torus; radius: 30; radiusTubular: 0.03;segmentsTubular: 50"
+        <a-entity geometry="primitive: torus; radius: 29; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 38; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
@@ -178,7 +201,6 @@
             material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 67; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
-        -->
 
     </a-scene>
 </body>
