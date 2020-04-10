@@ -66,33 +66,35 @@
 
 
         <!--VÉNUS-->
-        <a-entity position="-2 -10 -35" animation="property: rotation;
-        to: 0 0 0;
+        <a-entity position="-20 -10 -35" animation="property: rotation;
+        to: 0 360 0;
         loop: true;
-        dur: 15000;
+        dur: 5000;
         easing: linear">
-            <a-sphere src="#venus" radius="2" segments-height="84" animation="property: rotation;
-                to: 0 -360 0;
-                loop: true;
-                dur: 40000;
-                easing: linear">
-            </a-sphere>
+            <a-sphere src="#venus" radius="2" position="14 0 -10" animation="property: rotation; 
+                to: 0 -360 0; 
+                loop: true; 
+                dur: 40000; 
+                easing: linear"> </a-sphere>
         </a-entity>
 
         <!--TERRA-->
-        <a-sphere src="#earth" radius="2" segments-height="84" position="4 -10 -35" animation="property: rotation;
-        to: 0 -360 0;
-        loop: true;
-        dur: 50000;
-        easing: linear">
-
-        </a-sphere>
-        <a-sphere src="#moon" radius="2" segments-height="84" position="6 -7 -35" scale=" 0.15 0.15 0.15" animation="property: rotation;
-        to: 0 -360 0;
-        loop: true;
-        dur: 25000;
-        easing: linear">
-        </a-sphere>
+        <a-entity position="-20 -10 -35"
+            animation="property: rotation; 
+            to: 0 360 0; 
+            loop: true; 
+            dur: 5000; 
+            easing: linear">
+            <a-sphere src="#earth" radius="2" position="20 0 -10"
+                animation="property: rotation; 
+                to: 0 -360 0; 
+                loop: true; 
+                dur: 5000; 
+                easing: linear"> </a-sphere>
+            <!--LUA-->
+            <a-sphere src="#moon" radius="2" position="22 3 -10" scale=" 0.15 0.15 0.15">
+            </a-sphere>
+        </a-entity>
 
         <!--MARTE-->
         <a-entity position="11 -10 -35" animation="property: rotation;
@@ -161,21 +163,21 @@
 
         <!--ORBITAS DE CADA PLANETA-->
         <a-entity geometry="primitive: torus; radius: 12; radiusTubular: 0.03;segmentsTubular: 50"
-            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="0.9 1 0.1"></a-entity>
-        <!--<a-entity geometry="primitive: torus; radius: 17; radiusTubular: 0.03;segmentsTubular: 50"
-            material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="0.9 1 1"></a-entity>
+        <a-entity geometry="primitive: torus; radius: 17; radiusTubular: 0.03;segmentsTubular: 50"
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 23; radiusTubular: 0.03;segmentsTubular: 50"
-            material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
-        <a-entity geometry="primitive: torus; radius: 30; radiusTubular: 0.03;segmentsTubular: 50"
-            material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
+        <!--<a-entity geometry="primitive: torus; radius: 30; radiusTubular: 0.03;segmentsTubular: 50"
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 38; radiusTubular: 0.03;segmentsTubular: 50"
-            material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 48; radiusTubular: 0.03;segmentsTubular: 50"
-            material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 58; radiusTubular: 0.03;segmentsTubular: 50"
-            material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 67; radiusTubular: 0.03;segmentsTubular: 50"
-            material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
         -->
 
     </a-scene>
