@@ -31,15 +31,13 @@
             <a-camera></a-camera>
         </a-entity>
         <a-sky src="#milky_way"></a-sky>
-        <a-entity  geometry="primitive: plane; width: 8; height: 2"
-        position="0 5 0"
-        material=" opacity:0;"
-        text=" width: 20;
-        
+        <!--  Título -->
+        <a-entity geometry="primitive: plane; width: 8; height: 2" position="0 7 0" material=" opacity:0;" text=" width: 30;
+        font:https://cdn.aframe.io/fonts/mozillavr.fnt;
         color:#D989B5;
         align: center;
         value:Solar System 
-        " ></a-entity>
+        "></a-entity>
 
 
         <!--PLANETAS-->
@@ -53,14 +51,12 @@
         </a-sphere>
 
         <!--MERCÚRIO-->
-        <a-entity position="-20 -10 -35"
-         animation="property: rotation;
+        <a-entity position="-20 -10 -35" animation="property: rotation;
         to: 0 360 0;
         loop: true;
         dur: 5000;
         easing: linear">
-            <a-sphere src="#mercury" radius="2" position="1 0 -11"
-            scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere src="#mercury" radius="2" position="1 0 -11" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 40000;
@@ -70,7 +66,7 @@
 
 
         <!--VÉNUS-->
-        <a-entity position="-2 -10 -35"  animation="property: rotation;
+        <a-entity position="-2 -10 -35" animation="property: rotation;
         to: 0 0 0;
         loop: true;
         dur: 15000;
