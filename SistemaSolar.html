@@ -27,7 +27,7 @@
 
         <!--FUNDO-->
         <!-- Camera -->
-        <a-entity position="0 3 8">
+        <a-entity position="0 0 8">
             <a-camera></a-camera>
         </a-entity>
         <a-sky src="#milky_way"></a-sky>
@@ -44,12 +44,19 @@
         </a-sphere>
 
         <!--MERCÚRIO-->
-        <a-sphere src="#mercury" radius="2" segments-height="84" position="-7 -10 -35" scale=" 0.5 0.5 0.5"  animation="property: rotation;
-        to: 0 -360 0;
+        <a-entity position="-7 -10 -35" animation="property: rotation;
+        to: 0 0 0;
         loop: true;
-        dur: 40000;
+        dur: 15000;
         easing: linear">
-        </a-sphere>
+            <a-sphere src="#mercury" radius="2" scale=" 0.5 0.5 0.5" animation="property: rotation;
+                to: 0 -360 0;
+                loop: true;
+                dur: 40000;
+                easing: linear">
+            </a-sphere>
+        </a-entity>
+
 
         <!--VÉNUS-->
         <a-sphere src="#venus" radius="2" segments-height="84" position="-2 -10 -35" animation="property: rotation;
@@ -57,16 +64,16 @@
         loop: true;
         dur: 40000;
         easing: linear">
-            
+
         </a-sphere>
 
         <!--TERRA-->
-        <a-sphere src="#earth" radius="2" segments-height="84" position="4 -10 -35"animation="property: rotation;
+        <a-sphere src="#earth" radius="2" segments-height="84" position="4 -10 -35" animation="property: rotation;
         to: 0 -360 0;
         loop: true;
         dur: 50000;
         easing: linear">
-            
+
         </a-sphere>
         <a-sphere src="#moon" radius="2" segments-height="84" position="6 -7 -35" scale=" 0.15 0.15 0.15" animation="property: rotation;
         to: 0 -360 0;
@@ -76,12 +83,18 @@
         </a-sphere>
 
         <!--MARTE-->
-        <a-sphere src="#mars" radius="2" segments-height="84" position="11 -10 -35" animation="property: rotation;
-        to: 0 -360 0;
-        loop: true;
-        dur: 15000;
-        easing: linear">
-        </a-sphere>
+        <a-entity position="11 -10 -35" animation="property: rotation;
+                                to: 0 0 0;
+                                loop: true;
+                                dur: 15000;
+                                easing: linear">
+            <a-sphere src="#mars" radius="3" position="0 0 0" animation="property: rotation;
+            to: 0 -360 0;
+            loop: true;
+            dur: 15000;
+            easing: linear">
+            </a-sphere>
+        </a-entity>
 
         <!--JÚPITER-->
         <a-sphere src="#jupiter" radius="3" segments-height="84" position="19 -10 -35" animation="property: rotation;
@@ -151,7 +164,7 @@
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 67; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
-        
+
 
     </a-scene>
 </body>
