@@ -44,12 +44,14 @@
         </a-sphere>
 
         <!--MERCÚRIO-->
-        <a-entity position="-7 -10 -35" animation="property: rotation;
-        to: 0 0 0;
+        <a-entity position="-20 -10 -35"
+         animation="property: rotation;
+        to: 0 360 0;
         loop: true;
-        dur: 15000;
+        dur: 10000;
         easing: linear">
-            <a-sphere src="#mercury" radius="2" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere src="#mercury" radius="2" position="1 0 -11"
+            scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 40000;
@@ -59,13 +61,18 @@
 
 
         <!--VÉNUS-->
-        <a-sphere src="#venus" radius="2" segments-height="84" position="-2 -10 -35" animation="property: rotation;
-        to: 0 -360 0;
+        <a-entity position="-2 -10 -35"  animation="property: rotation;
+        to: 0 0 0;
         loop: true;
-        dur: 40000;
+        dur: 15000;
         easing: linear">
-
-        </a-sphere>
+            <a-sphere src="#venus" radius="2" segments-height="84" animation="property: rotation;
+                to: 0 -360 0;
+                loop: true;
+                dur: 40000;
+                easing: linear">
+            </a-sphere>
+        </a-entity>
 
         <!--TERRA-->
         <a-sphere src="#earth" radius="2" segments-height="84" position="4 -10 -35" animation="property: rotation;
@@ -150,7 +157,7 @@
         <!--ORBITAS DE CADA PLANETA-->
         <a-entity geometry="primitive: torus; radius: 12; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
-        <a-entity geometry="primitive: torus; radius: 17; radiusTubular: 0.03;segmentsTubular: 50"
+        <!--<a-entity geometry="primitive: torus; radius: 17; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 23; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
@@ -164,7 +171,7 @@
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
         <a-entity geometry="primitive: torus; radius: 67; radiusTubular: 0.03;segmentsTubular: 50"
             material="color: gray;opacity: 1.0" position="-19 -10 -35" rotation="90 0 0" scale="1 1 0.1"></a-entity>
-
+        -->
 
     </a-scene>
 </body>
