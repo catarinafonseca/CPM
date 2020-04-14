@@ -28,7 +28,7 @@
         <!--FUNDO-->
         <!-- Camera     40 0 8    -20 33 -35-->
         <a-entity position="-14 0 40">
-            <a-camera></a-camera>
+            <a-camera><a-cursor color="white"></a-cursor></a-camera>
         </a-entity>
         <a-sky src="#milky_way"></a-sky>
         <!--  Título -->
@@ -39,7 +39,7 @@
         value:Solar System 
         "></a-entity>
 
-
+   
         <!--PLANETAS-->
 
         <!--SOL-->
@@ -49,6 +49,7 @@
         dur: 35000;
         easing: linear" >
         </a-sphere>
+        
 
         <!--MERCÚRIO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
