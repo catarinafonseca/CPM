@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Solar</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
         </a-assets>
 
         <!--FUNDO-->
-        <!-- Camera     40 0 8    -20 33 -35-->
+        <!-- Camera-->
         <a-entity position="-14 0 40">
             <a-camera><a-cursor color="white"></a-cursor></a-camera>
         </a-entity>
@@ -47,9 +48,11 @@
         to: 0 -360 0;
         loop: true;
         dur: 35000;
-        easing: linear" >
+        easing: linear"  event-set__AlteraVisibilidade="_event: click; _target: #azul; visible: true">
         </a-sphere>
-        
+        <a-box id="azul" width="5" height="5" depth="0" color="#0000AA" position="-21 -10 -20" visible="false"
+        event-set__ResetVisibilidade="_event: click; visible: false">
+ </a-box>
 
         <!--MERCÚRIO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
@@ -61,8 +64,9 @@
                 to: 0 -360 0;
                 loop: true;
                 dur: 40000;
-                easing: linear">
+                easing: linear" >
             </a-sphere>
+            
         </a-entity>
 
 
