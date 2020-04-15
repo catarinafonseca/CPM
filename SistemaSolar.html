@@ -27,8 +27,8 @@
         </a-assets>
 
         <!--FUNDO-->
-        <!-- Camera          -7 0 40     -21 40 -35 -->
-        <a-entity position="80 0 20">
+        <!-- Camera          -7 0 40     -21 40 -35      110 0 20-->
+        <a-entity position="110 0 20">
             <a-camera>
                 <!--CURSOR-->
                 <a-entity cursor="" position="0 0 -1" geometry="primitive: sphere; radius: 0.005"
@@ -127,7 +127,7 @@
         loop: true;
         dur: 60000;
         easing: linear">
-            <a-sphere src="#jupiter" radius="16" position="99 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere src="#jupiter" radius="17" position="99 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 60000;
@@ -135,43 +135,43 @@
             </a-sphere>
         </a-entity>
 
-        <!--SATURNO
+        <!--SATURNO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
         to: 0 0 0;
         loop: true;
         dur: 65000;
         easing: linear">
-            <a-sphere src="#saturn" radius="2.5" position="48 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere src="#saturn" radius="15" position="130 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 65000;
                 easing: linear">
-            </a-sphere>-->
+            </a-sphere>
 
-        <!--ARCO GRANDE
-            <a-entity geometry="primitive: torus; radius: 4; radiusTubular: 0.1;segmentsTubular: 50"
-                material="color: #57524A;" position="48 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>-->
-        <!--ARCO PEQUENO
-            <a-entity geometry="primitive: torus; radius: 3.2; radiusTubular: 0.2;segmentsTubular: 50"
-                material="color: #A29A87;" position="48 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>
-        </a-entity>-->
+        <!--ARCO GRANDE-->
+            <a-entity geometry="primitive: torus; radius: 11; radiusTubular: 0.5;segmentsTubular: 50"
+                material="color: #57524A;" position="130 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+        <!--ARCO PEQUENO-->
+            <a-entity geometry="primitive: torus; radius: 13; radiusTubular: 0.5;segmentsTubular: 50"
+                material="color: #A29A87;" position="130 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+        </a-entity>
 
-        <!--URANO
+        <!--URANO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
         to: 0 0 0;
         loop: true;
         dur: 70000;
         easing: linear">
-            <a-sphere src="#uranus" radius="1.8" position="57 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere src="#uranus" radius="14" position="160 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 70000;
                 easing: linear">
-            </a-sphere>-->
-        <!--ARCO
-            <a-entity geometry="primitive: torus; radius: 2.5; radiusTubular: 0.01;segmentsTubular: 50"
-                material="color: #FFFFFF;" position="57 0 -10" rotation="-10 90 0" scale="1 1 0.1"></a-entity>
-        </a-entity>-->
+            </a-sphere>
+        <!--ARCO-->
+            <a-entity geometry="primitive: torus; radius: 12; radiusTubular: 0.02;segmentsTubular: 50"
+                material="color: #FFFFFF;" position="160 0 -10" rotation="-10 90 0" scale="1 1 0.1"></a-entity>
+        </a-entity>
 
         <!--NEPTUNO
         <a-entity position="-20 -10 -35" animation="property: rotation;
@@ -179,7 +179,7 @@
         loop: true;
         dur: 75000;
         easing: linear">
-            <a-sphere src="#neptune" radius="1.5" segments-height="84" position="66.5 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere src="#neptune" radius="13" segments-height="84" position="66.5 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 75000;
