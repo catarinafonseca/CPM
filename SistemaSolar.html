@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Sistema Solar</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
@@ -25,18 +26,22 @@
             <img id="milky_way" src="images/stars_milky_way.jpg">
             <img id="mercury" src="images/mercury.jpg">
             <img id="titan" src="images/titan.jpg">
-            <img id="titan-normal" src="images/titan-normal.jpg">
             <img id="io" src="images/io.png">
             <img id="europa" src="images/europa.jpg">
             <img id="callisto" src="images/callisto.png">
             <img id="ganymede" src="images/ganymede.jpg">
+
+            <!--TEXTURAS-->
+            <img id="titan-normal" src="images/titan-normal.jpg">
+            <img id="paper-normal" src="images/paper-normal.png">
+
 
             <audio id="som" src="som/space_sound.mp3"></audio>
         </a-assets>
 
         <!--FUNDO-->
         <!-- Camera          -7 0 40     -21 40 -35      110 0 20-->
-        <a-entity position="-7 0 40">
+        <a-entity position="-7 0 100">
             <a-camera>
                 <!--CURSOR-->
                 <a-entity cursor="" position="0 0 -1" geometry="primitive: sphere; radius: 0.005"
@@ -45,6 +50,14 @@
             </a-camera>
         </a-entity>
         <a-sky src="#milky_way"></a-sky>
+
+        <!--  Título -->
+        <a-entity geometry="primitive: plane; width: 8; height: 2" position="-20 20 40" material=" opacity:0;" text=" width: 60;
+        font:https://cdn.aframe.io/fonts/mozillavr.fnt;
+        color:#D989B5;
+        align: center;
+        value:Solar System 
+        "></a-entity>
 
         <!--ÁUDIO
         <a-entity id="coluna" 
@@ -58,20 +71,13 @@
         easing: linear"
         ></a-entity>-->
 
-        <!--  Título -->
-        <a-entity geometry="primitive: plane; width: 8; height: 2" position="-20 20 40" material=" opacity:0;" text=" width: 60;
-        font:https://cdn.aframe.io/fonts/mozillavr.fnt;
-        color:#D989B5;
-        align: center;
-        value:Solar System 
-        "></a-entity>
 
 
 
         <!--PLANETAS-->
 
         <!--SOL-->
-        <a-sphere src="#sun" radius="16" segments-height="84" position="-21 -10 -35" animation="property: rotation;
+        <a-sphere id="sun" src="#sun" radius="16" segments-height="84" position="-21 -10 -35" animation="property: rotation;
         to: 0 -360 0;
         loop: true;
         dur: 65000;
@@ -86,17 +92,17 @@
         value:SOL
         
         Massa: 1,98892 x 10^30 kg
-Diâmetro: 1 391 000 km
-Raio: 695 500 km
-Volume: 1.412* 10^18 km^3
-Rotação: 28 dias
-Translação: 200 milhões de anos
-Composição: hidrogênio, hélio, ferro, níquel, oxigênio e silício." 
-visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a-entity>
-       
+        Diâmetro: 1 391 000 km
+        Raio: 695 500 km
+        Volume: 1.412* 10^18 km^3
+        Rotação: 28 dias
+        Translação: 200 milhões de anos
+        Composição: hidrogênio, hélio, ferro, níquel, oxigênio e silício." visible="false"
+            event-set__ResetVisibilidade="_event: click; visible: false"></a-entity>
+
         <!--<a-box id="azul" width="7" height="5" depth="0" color="#0000AA" position="-21 10 -35" visible="false"
             event-set__ResetVisibilidade="_event: click; visible: false"> 
-        </a-box> -->
+        </a-box>-->
 
 
         <!--MERCÚRIO-->
@@ -105,7 +111,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
         loop: true;
         dur: 5000;
         easing: linear">
-            <a-sphere src="#mercury" radius="5" position="22 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere id="mercury" src="#mercury" radius="5" position="22 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 40000;
@@ -121,7 +127,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
         loop: true;
         dur: 5000;
         easing: linear">
-            <a-sphere src="#venus" radius="11" position="38 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation; 
+            <a-sphere id="venus" src="#venus" radius="11" position="38 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation; 
                 to: 0 -360 0; 
                 loop: true; 
                 dur: 40000; 
@@ -134,13 +140,13 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
             loop: true; 
             dur: 5000; 
             easing: linear">
-            <a-sphere src="#earth" radius="12" position="60 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation; 
+            <a-sphere id="earth" src="#earth" radius="12" position="60 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation; 
                 to: 0 -360 0; 
                 loop: true; 
                 dur: 20000; 
                 easing: linear"> </a-sphere>
             <!--LUA-->
-            <a-sphere src="#moon" radius="4" position="67 6 -10" scale=" 0.15 0.15 0.15">
+            <a-sphere id="moon" src="#moon" radius="4" position="67 6 -10" scale=" 0.15 0.15 0.15">
             </a-sphere>
 
         </a-entity>
@@ -151,7 +157,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
             loop: true;
             dur: 5000;
             easing: linear">
-            <a-sphere src="#mars" radius="6" position="80 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere id="mars" src="#mars" radius="6" position="80 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 15000;
@@ -165,17 +171,17 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
         loop: true;
         dur: 5000;
         easing: linear">
-            <a-sphere src="#jupiter" radius="17" position="99 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere id="jupiter" src="#jupiter" radius="17" position="99 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 60000;
                 easing: linear">
             </a-sphere>
             <!--LUAS-->
-            <a-sphere src="#io" radius="4" position="99 18 -15" scale=" 0.20 0.20 0.20"></a-sphere>
-            <a-sphere src="#europa" radius="4" position="90 10 -10" scale=" 0.10 0.10 0.10"></a-sphere>
-            <a-sphere src="#ganymede" radius="4" position="108 5 -20" scale=" 0.32 0.32 0.32"></a-sphere>
-            <a-sphere src="#callisto" radius="4" position="90 -10 -10" scale=" 0.15 0.15 0.15"></a-sphere>
+            <a-sphere id="io" src="#io" radius="4" position="99 18 -15" scale=" 0.20 0.20 0.20"></a-sphere>
+            <a-sphere id="europa" src="#europa" radius="4" position="90 10 -10" scale=" 0.10 0.10 0.10"></a-sphere>
+            <a-sphere id="ganymede" src="#ganymede" radius="4" position="108 5 -20" scale=" 0.32 0.32 0.32"></a-sphere>
+            <a-sphere id="callisto" src="#callisto" radius="4" position="90 -10 -10" scale=" 0.15 0.15 0.15"></a-sphere>
         </a-entity>
 
         <!--SATURNO-->
@@ -184,15 +190,15 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
         loop: true;
         dur: 5000;
         easing: linear">
-            <a-sphere src="#saturn" radius="15" position="130 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere id="saturn" src="#saturn" radius="15" position="130 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 65000;
                 easing: linear">
             </a-sphere>
             <!--LUA-->
-            <a-sphere src="#titan" radius="4" position="135 5 0"
-                scale=" 0.30 0.30 0.30"></a-sphere>
+            <a-sphere id="titan" src="#titan" normal-scale="1 -1" radius="4" position="135 5 0" scale=" 0.30 0.30 0.30">
+            </a-sphere>
 
             <!--ARCO GRANDE-->
             <a-entity geometry="primitive: torus; radius: 11; radiusTubular: 0.5;segmentsTubular: 50"
@@ -208,7 +214,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
         loop: true;
         dur: 5000;
         easing: linear">
-            <a-sphere src="#uranus" radius="14" position="160 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere id="uranus" src="#uranus" radius="14" position="160 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 70000;
@@ -225,8 +231,8 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
         loop: true;
         dur: 5000;
         easing: linear">
-            <a-sphere src="#neptune" radius="13" segments-height="84" position="186 0 -10" scale=" 0.5 0.5 0.5"
-                animation="property: rotation;
+            <a-sphere id="neptune" src="#neptune" radius="13" segments-height="84" position="186 0 -10"
+                scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 75000;
