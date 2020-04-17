@@ -75,10 +75,27 @@
         to: 0 -360 0;
         loop: true;
         dur: 65000;
-        easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #azul; visible: true">
+        easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #sunDescription; visible: true">
         </a-sphere>
+        <a-entity id="sunDescription" geometry="primitive: plane; width: 60; height: 80" position="-170 60 -35"
+            material="color: #FFFFFF; roughness:10;" text="negate:true;
+        width: 100; 
+ 
+        color: #000;
+        align: center;
+        value:SOL
+        
+        Massa: 1,98892 x 10^30 kg
+Diâmetro: 1 391 000 km
+Raio: 695 500 km
+Volume: 1.412* 10^18 km^3
+Rotação: 28 dias
+Translação: 200 milhões de anos
+Composição: hidrogênio, hélio, ferro, níquel, oxigênio e silício." 
+visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a-entity>
+       
         <!--<a-box id="azul" width="7" height="5" depth="0" color="#0000AA" position="-21 10 -35" visible="false"
-            event-set__ResetVisibilidade="_event: click; visible: false">
+            event-set__ResetVisibilidade="_event: click; visible: false"> 
         </a-box> -->
 
 
