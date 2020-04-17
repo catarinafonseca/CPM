@@ -24,11 +24,18 @@
             <img id="saturn-ring" src="images/saturn_ring.png">
             <img id="milky_way" src="images/stars_milky_way.jpg">
             <img id="mercury" src="images/mercury.jpg">
+            <img id="titan" src="images/titan.jpg">
+            <img id="io" src="images/io.png">
+            <img id="europa" src="images/europa.jpg">
+            <img id="callisto" src="images/callisto.png">
+            <img id="ganymede" src="images/ganymede.jpg">
+
+            <audio id="som" src="som/space_sound.mp3"></audio>
         </a-assets>
 
         <!--FUNDO-->
         <!-- Camera          -7 0 40     -21 40 -35      110 0 20-->
-        <a-entity position="-7 0 70">
+        <a-entity position="-7 0 40">
             <a-camera>
                 <!--CURSOR-->
                 <a-entity cursor="" position="0 0 -1" geometry="primitive: sphere; radius: 0.005"
@@ -37,6 +44,19 @@
             </a-camera>
         </a-entity>
         <a-sky src="#milky_way"></a-sky>
+
+        <!--ÁUDIO
+        <a-entity id="coluna" 
+        position="-7 0 40" sound="src: #som; autoplay: true; loop:true"
+        animation="property: position;
+        from: -7 0 40;
+        to: -7 0 -10;
+        dur: 50000;
+        loop:true;
+        dir: alternate;
+        easing: linear"
+        ></a-entity>-->
+
         <!--  Título -->
         <a-entity geometry="primitive: plane; width: 8; height: 2" position="-20 20 40" material=" opacity:0;" text=" width: 60;
         font:https://cdn.aframe.io/fonts/mozillavr.fnt;
@@ -45,7 +65,7 @@
         value:Solar System 
         "></a-entity>
 
-        <!---->
+        
 
         <!--PLANETAS-->
 
@@ -80,7 +100,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
 
         <!--MERCÚRIO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 360 0;
+        to: 0 0 0;
         loop: true;
         dur: 5000;
         easing: linear">
@@ -96,7 +116,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
 
         <!--VÉNUS-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 360 0;
+        to: 0 0 0;
         loop: true;
         dur: 5000;
         easing: linear">
@@ -109,7 +129,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
 
         <!--TERRA-->
         <a-entity position="-20 -10 -35" animation="property: rotation; 
-            to: 0 360 0; 
+            to: 0 0 0; 
             loop: true; 
             dur: 5000; 
             easing: linear">
@@ -126,7 +146,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
 
         <!--MARTE-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-            to: 0 360 0;
+            to: 0 0 0;
             loop: true;
             dur: 5000;
             easing: linear">
@@ -140,7 +160,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
 
         <!--JÚPITER-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 360 0;
+        to: 0 0 0;
         loop: true;
         dur: 5000;
         easing: linear">
@@ -150,11 +170,16 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
                 dur: 60000;
                 easing: linear">
             </a-sphere>
+            <!--LUAS-->
+            <a-sphere src="#io" radius="4" position="99 18 -15" scale=" 0.20 0.20 0.20"></a-sphere>
+            <a-sphere src="#europa" radius="4" position="90 10 -10" scale=" 0.10 0.10 0.10"></a-sphere>
+            <a-sphere src="#ganymede" radius="4" position="108 5 -20" scale=" 0.32 0.32 0.32"></a-sphere>
+            <a-sphere src="#callisto" radius="4" position="90 -10 -10" scale=" 0.15 0.15 0.15"></a-sphere>
         </a-entity>
 
         <!--SATURNO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 360 0;
+        to: 0 0 0;
         loop: true;
         dur: 5000;
         easing: linear">
@@ -164,6 +189,8 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
                 dur: 65000;
                 easing: linear">
             </a-sphere>
+            <!--LUA-->
+            <a-sphere src="#titan" radius="4" position="135 5 0" scale=" 0.30 0.30 0.30"></a-sphere>
 
             <!--ARCO GRANDE-->
             <a-entity geometry="primitive: torus; radius: 11; radiusTubular: 0.5;segmentsTubular: 50"
@@ -175,7 +202,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
 
         <!--URANO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 360 0;
+        to: 0 0 0;
         loop: true;
         dur: 5000;
         easing: linear">
@@ -192,7 +219,7 @@ visible="false" event-set__ResetVisibilidade="_event: click; visible: false"></a
 
         <!--NEPTUNO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 360 0;
+        to: 0 0 0;
         loop: true;
         dur: 5000;
         easing: linear">
