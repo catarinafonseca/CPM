@@ -29,11 +29,13 @@
             <img id="europa" src="images/europa.jpg">
             <img id="callisto" src="images/callisto.png">
             <img id="ganymede" src="images/ganymede.jpg">
+
+            <audio id="som" src="som/space_sound.mp3"></audio>
         </a-assets>
 
         <!--FUNDO-->
         <!-- Camera          -7 0 40     -21 40 -35      110 0 20-->
-        <a-entity position="110 0 0">
+        <a-entity position="-7 0 40">
             <a-camera>
                 <!--CURSOR-->
                 <a-entity cursor="" position="0 0 -1" geometry="primitive: sphere; radius: 0.005"
@@ -42,6 +44,19 @@
             </a-camera>
         </a-entity>
         <a-sky src="#milky_way"></a-sky>
+
+        <!--ÁUDIO
+        <a-entity id="coluna" 
+        position="-7 0 40" sound="src: #som; autoplay: true; loop:true"
+        animation="property: position;
+        from: -7 0 40;
+        to: -7 0 -10;
+        dur: 50000;
+        loop:true;
+        dir: alternate;
+        easing: linear"
+        ></a-entity>-->
+
         <!--  Título -->
         <a-entity geometry="primitive: plane; width: 8; height: 2" position="-20 20 40" material=" opacity:0;" text=" width: 60;
         font:https://cdn.aframe.io/fonts/mozillavr.fnt;
@@ -50,7 +65,7 @@
         value:Solar System 
         "></a-entity>
 
-        <!---->
+        
 
         <!--PLANETAS-->
 
