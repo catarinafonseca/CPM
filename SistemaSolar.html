@@ -8,8 +8,7 @@
     <title>Sistema Solar</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
-    <script
-        src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
 </head>
 
 <body>
@@ -32,7 +31,8 @@
             <img id="europa" src="images/europa.jpg">
             <img id="callisto" src="images/callisto.png">
             <img id="ganymede" src="images/ganymede.jpg">
-
+            <a-asset-item id="satelite-mtl" src="satellite/materials.mtl"></a-asset-item>
+            <a-asset-item id="satelite-obj" src="satellite/model.obj"></a-asset-item>
             <!--TEXTURAS-->
             <img id="paper-normal" src="images/paper-normal.png">
 
@@ -72,8 +72,9 @@
         easing: linear"
         ></a-entity>-->
 
-
-
+        <a-entity obj-model="obj: #satelite-obj; mtl: #satelite-mtl" position="-21 30 -35" scale="40 40 40 "></a-entity>
+       
+        
 
         <!--PLANETAS-->
 
@@ -115,7 +116,7 @@
                 to: 0 -360 0;
                 loop: true;
                 dur: 40000;
-                easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #mercuryDescription; visible: true">
+                easing: linear" event-set__AlteraVisibilidade1="_event: click; _target: #mercuryDescription; visible: true" >
             </a-sphere>
         </a-entity>
         <!-- CARACTERISTICAS - MERCÚRIO -->
@@ -135,7 +136,7 @@
         Rotação: 58 horas
         Translação: 88 dias 
         Luas: nenhuma 
-        Composição básica da atmosfera: hélio, sódio e oxigênio " visible="false" event-set__ResetVisibilidade="_event: click; visible: false">
+        Composição básica da atmosfera: hélio, sódio e oxigênio " visible="false" event-set__ResetVi="_event: click; visible: false">
         </a-entity>
 
 
