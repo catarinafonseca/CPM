@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sistema Solar</title>
@@ -34,11 +35,8 @@
             <img id="ganymede" src="images/ganymede.jpg">
             <img id="moon_mars" src="images/moon_mars.jpg">
             <img id="moon2_mars" src="images/moon2_mars.jpg">
-            <a-asset-item id="satelite-mtl" src="satellite/materials.mtl"></a-asset-item>
-            <a-asset-item id="satelite-obj" src="satellite/model.obj"></a-asset-item>
             <!--TEXTURAS-->
             <img id="paper-normal" src="images/papel_normal.jpg">
-            <img id="metal-normal" src="images/metal_normal.tif">
 
 
             <audio id="som" src="som/space_sound.mp3"></audio>
@@ -46,7 +44,7 @@
 
         <!--FUNDO-->
         <!-- Camera          -7 0 100     -21 40 -35      110 0 20-->
-        <a-entity position="73 6 -15">
+        <a-entity position="-7 0 100">
             <a-camera>
                 <!--CURSOR-->
                 <a-entity cursor="" position="0 0 -1" geometry="primitive: sphere; radius: 0.005"
@@ -78,8 +76,6 @@
         ></a-entity>-->
 
         <!--SATÉLITE-->
-        <a-entity obj-model="obj: #satelite-obj; mtl: #satelite-mtl" position="-21 30 -35" scale="40 40 40" color="white"
-        normal-map="#metal-normal" normal-scale="1 -1"></a-entity>
 
 
 
@@ -95,24 +91,25 @@
         <!-- CARACTERISTICAS - SOL -->
         <a-entity id="sunDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
             material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
-                width: 100; 
-        
-                color: #000;
-                align: center;
-                letterSpacing: 8;;
-                value:SOL
-                
-                Massa: 1,98892 x 10^30 kg
-                Diâmetro: 1 391 000 km
-                Raio: 695 500 km
-                Volume: 1.412 x 10^18 km^3
-                Rotação: 28 dias
-                Translação: 200 milhões de anos
-                Composição: hidrogênio, hélio, ferro,
-                níquel, oxigênio e silício." visible="false"
-            event-set__ResetVisibilidade="_event: click; visible: false">
+            width: 100; 
+    
+            color: #000;
+            align: center;
+            font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+            letterSpacing: 8;;
+            value:SOL
+            
+            Massa: 1,98892 x 10^30 kg
+            Diâmetro: 1 391 000 km
+            Raio: 695 500 km
+            Volume: 1.412 x 10^18 km^3
+            Rotação: 28 dias
+            Translação: 200 milhões de anos
+            Composição: hidrogênio, hélio, ferro,
+            níquel, oxigênio e silício." visible="false" event-set__ResetVisibilidade="_event: click; visible: false">
         </a-entity>
 
+        <!--  -->
 
 
         <!--MERCÚRIO-->
@@ -131,11 +128,12 @@
         </a-entity>
         <!-- CARACTERISTICAS - MERCÚRIO -->
         <a-entity id="mercuryDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #FFFFFF; roughness:10; normal-map: #paper-normal" text="negate:true;
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
                 width: 100; 
         
                 color: #000;
                 align: center;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
                 letterSpacing: 8;;
                 value: MERCÚRIO
             
@@ -166,11 +164,12 @@
         </a-entity>
         <!-- CARACTERISTICAS - VÉNUS -->
         <a-entity id="venusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #FFFFFF; roughness:10; normal-map: #paper-normal" text="negate:true;
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
                 width: 100; 
         
                 color: #000;
                 align: center;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
                 letterSpacing: 8;;
                 value: VÉNUS
 
@@ -203,11 +202,12 @@
         </a-entity>
         <!-- CARACTERISTICAS - TERRA -->
         <a-entity id="earthDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #FFFFFF; roughness:10; normal-map: #paper-normal" text="negate:true;
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
                 width: 100; 
         
                 color: #000;
                 align: center;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
                 letterSpacing: 8;;
                 value: TERRA
 
@@ -236,18 +236,19 @@
                 easing: linear">
             </a-sphere>
             <!--LUAS-->
-            <a-sphere id="moon_mars" src="#moon_mars" radius="4" position="83 6 -10" scale=" 0.17 0.17 0.17">
+            <a-sphere id="moon_mars" src="#moon_mars" radius="4" position="83 5 -10" scale=" 0.17 0.17 0.17">
             </a-sphere>
-            <a-sphere id="moon" src="#moon2_mars" radius="4" position="79 6 -10" scale=" 0.15 0.15 0.15">
+            <a-sphere id="moon" src="#moon2_mars" radius="4" position="76 2 -10" scale=" 0.15 0.15 0.15">
             </a-sphere>
         </a-entity>
         <!-- CARACTERISTICAS - MARTE -->
         <a-entity id="earthDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #FFFFFF; roughness:10; normal-map: #paper-normal" text="negate:true;
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
                 width: 100; 
         
                 color: #000;
                 align: center;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
                 letterSpacing: 8;;
                 value: MARTE
 
@@ -283,11 +284,12 @@
         </a-entity>
         <!-- CARACTERISTICAS - JÚPITER -->
         <a-entity id="jupiterDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #FFFFFF; roughness:10; normal-map: #paper-normal" text="negate:true;
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
                 width: 100; 
         
                 color: #000;
                 align: center;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
                 letterSpacing: 8;;
                 value: JÚPITER
 
@@ -316,7 +318,8 @@
                 easing: linear">
             </a-sphere>
             <!--LUA-->
-            <a-sphere id="titan" src="#titan" normal-scale="1 -1" radius="4" position="135 5 0" scale=" 0.30 0.30 0.30">
+            <a-sphere id="titan" src="#titan" normal-scale="1 -1" radius="4" position="131  3 0"
+                scale=" 0.30 0.30 0.30">
             </a-sphere>
 
             <!--ARCO GRANDE-->
@@ -328,11 +331,12 @@
         </a-entity>
         <!-- CARACTERISTICAS - SATURNO -->
         <a-entity id="saturnDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #FFFFFF; roughness:10; normal-map: #paper-normal" text="negate:true;
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
                 width: 100; 
         
                 color: #000;
                 align: center;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
                 letterSpacing: 8;;
                 value: SATURNO
 
@@ -367,11 +371,12 @@
         </a-entity>
         <!-- CARACTERISTICAS - URANO -->
         <a-entity id="uranusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #FFFFFF; roughness:10; normal-map: #paper-normal" text="negate:true;
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
                 width: 100; 
         
                 color: #000;
                 align: center;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
                 letterSpacing: 8;;
                 value: URANO
 
@@ -413,11 +418,12 @@
         </a-entity>
         <!-- CARACTERISTICAS - NEPTUNO -->
         <a-entity id="neptuneDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #FFFFFF; roughness:10; normal-map: #paper-normal" text="negate:true;
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
                 width: 100; 
         
                 color: #000;
                 align: center;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
                 letterSpacing: 8;;
                 value: NEPTUNO
 
