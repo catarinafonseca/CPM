@@ -77,12 +77,28 @@
 
         <!--SATÉLITE-->
 
+        <!-- Ponto de luz-->
+        <a-light 
+        type="ambient" 
+        color="#c0c0c0" 
+        intensity="0.5" 
+        position="-21 -10 -35">
+
+        </a-light>
+
+        <!-- Ponto de luz-->
+        <a-light 
+        type="point" 
+        color="#F2EF89" 
+        intensity="1" 
+        target="#sun">
+        </a-light>
 
 
         <!--PLANETAS-->
 
         <!--SOL-->
-        <a-sphere id="sun" src="#sun" radius="16" color="#F2DF6A" segments-height="84" position="-21 -10 -35" animation="property: rotation;
+        <a-sphere id="sun" src="#sun" radius="16" segments-height="84" position="-21 -10 -35" animation="property: rotation;
         to: 0 -360 0;
         loop: true;
         dur: 65000;
@@ -114,9 +130,9 @@
 
         <!--MERCÚRIO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 0 0;
+        to: 0 360 0;
         loop: true;
-        dur: 5000;
+        dur: 30000;
         easing: linear">
             <a-sphere id="mercury" src="#mercury" radius="5" position="22 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
@@ -152,9 +168,9 @@
 
         <!--VÉNUS-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 0 0;
+        to: 0 360 0;
         loop: true;
-        dur: 5000;
+        dur: 40000;
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #venusDescription; visible: true">
             <a-sphere id="venus" src="#venus" radius="11" position="38 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation; 
                 to: 0 -360 0; 
@@ -187,9 +203,9 @@
 
         <!--TERRA-->
         <a-entity position="-20 -10 -35" animation="property: rotation; 
-            to: 0 0 0; 
+            to: 0 360 0; 
             loop: true; 
-            dur: 5000; 
+            dur: 50000; 
             easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #earthDescription; visible: true">
             <a-sphere id="earth" src="#earth" radius="12" position="60 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation; 
                 to: 0 -360 0; 
@@ -225,9 +241,9 @@
 
         <!--MARTE-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-            to: 0 0 0;
+            to: 0 360 0;
             loop: true;
-            dur: 5000;
+            dur: 65000;
             easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #marsDescription; visible: true">
             <a-sphere id="mars" src="#mars" radius="6" position="80 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
@@ -266,15 +282,16 @@
 
         <!--JÚPITER-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 0 0;
+        to: 0 360 0;
         loop: true;
-        dur: 5000;
+        dur: 95000;
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #jupiterDescription; visible: true">
             <a-sphere id="jupiter" src="#jupiter" radius="17" position="99 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 60000;
                 easing: linear">
+                </a-light>
             </a-sphere>
             <!--LUAS-->
             <a-sphere id="io" src="#io" radius="4" position="99 18 -15" scale=" 0.20 0.20 0.20"></a-sphere>
@@ -307,9 +324,9 @@
 
         <!--SATURNO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 0 0;
+        to: 0 360 0;
         loop: true;
-        dur: 5000;
+        dur: 105000;
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #saturnDescription; visible: true">
             <a-sphere id="saturn" src="#saturn" radius="15" position="130 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
@@ -355,9 +372,9 @@
 
         <!--URANO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 0 0;
+        to: 0 360 0;
         loop: true;
-        dur: 5000;
+        dur: 115000;
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #uranusDescription; visible: true">
             <a-sphere id="uranus" src="#uranus" radius="14" position="160 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
@@ -394,9 +411,9 @@
 
         <!--NEPTUNO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
-        to: 0 0 0;
+        to: 0 360 0;
         loop: true;
-        dur: 5000;
+        dur: 135000;
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #neptuneDescription; visible: true">
             <a-sphere id="neptune" src="#neptune" radius="13" segments-height="84" position="186 0 -10"
                 scale=" 0.5 0.5 0.5" animation="property: rotation;
