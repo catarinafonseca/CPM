@@ -96,17 +96,21 @@
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #sunDescription; visible: true">
         </a-sphere>
         <!-- CARACTERISTICAS - SOL -->
-        <a-entity id="sunDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" font=custom-msdf.json text="
+        <a-entity id="sunDescription"
+             geometry="primitive: plane; width: 100; height: 80"
+             position="-170 60 -35"
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal"
+            event-set__resetvisibilidade="_event: click; visible: false"
+             text="font: custom-msdf.json
             negate:true;
-            width: 100; 
-    
+            width: 100;
+   
             color: #000;
             align: center;
             font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
             letterSpacing: 8;;
             value:SOL
-            
+           
             Massa: 1,98892 x 10^30 kg
             Diâmetro: 1 391 000 km
             Raio: 695 500 km
@@ -114,8 +118,7 @@
             Rotação: 28 dias
             Translação: 200 milhões de anos
             Composição: hidrogênio, hélio, ferro,
-            níquel, oxigênio e silício." visible="false" event-set__ResetVisibilidade="_event: click; visible: false
-            ">
+            níquel, oxigênio e silício.">
         </a-entity>
 
         <!-- -->
