@@ -35,12 +35,11 @@
             <img id="ganymede" src="images/ganymede.jpg">
             <img id="moon_mars" src="images/moon_mars.jpg">
             <img id="moon2_mars" src="images/moon2_mars.jpg">
-            <a-asset-item id="satelite" src="satellite/scene.gltf"></a-asset-item>
             <!--TEXTURAS-->
             <img id="paper-normal" src="images/papel_normal.jpg">
 
 
-            <audio id="som" src="sound/space_sound.mp3"></audio>
+            <audio id="som" src="som/space_sound.mp3"></audio>
         </a-assets>
 
         <!--FUNDO-->
@@ -76,6 +75,8 @@
         easing: linear"
         ></a-entity>-->
 
+        <!--SATÉLITE-->
+
         <!-- Ponto de luz-->
         <a-light type="ambient" color="#c0c0c0" intensity="0.5" position="-21 -10 -35">
 
@@ -97,15 +98,13 @@
         </a-sphere>
         <!-- CARACTERISTICAS - SOL -->
         <a-entity id="sunDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal"
-            event-set__resetvisibilidade="_event: click; visible: false" text="font: custom-msdf/custom-msdf.json
-            negate:true;
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
+            negate:false;
             width: 100;
    
             color: #000;
             align: center;
-            font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
-            letterSpacing: 8;;
+            letterSpacing: 8;
             value:SOL
            
             Massa: 1,98892 x 10^30 kg
@@ -114,8 +113,8 @@
             Volume: 1.412 x 10^18 km^3
             Rotação: 28 dias
             Translação: 200 milhões de anos
-            Composição: hidrogénio, hélio, ferro,
-            níquel, oxigénio e silício.">
+            Composição: hidrogénio, hélio, 
+            ferro, níquel, oxigénio e silício." visible="false" event-set__ResetVisibilidade="_event: click; visible: false">
         </a-entity>
 
         <!-- -->
@@ -137,16 +136,16 @@
         </a-entity>
         <!-- CARACTERISTICAS - MERCÚRIO -->
         <a-entity id="mercuryDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
-                width: 100; 
-        
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
+                negate:false;
+                width: 100;
+    
                 color: #000;
                 align: center;
-                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
-                letterSpacing: 8;;
+                letterSpacing: 8;
                 value: MERCÚRIO
             
-                Massa:  3,302 x 10^23 kg
+                Massa: 3,302 x 10^23 kg
                 Diâmetro: 4 878 km
                 Raio: 2 439 km
                 Volume: 6.083 x 10^10 km^3
@@ -173,14 +172,14 @@
         </a-entity>
         <!-- CARACTERISTICAS - VÉNUS -->
         <a-entity id="venusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
-                width: 100; 
-        
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
+                negate:false;
+                width: 100;
+
                 color: #000;
                 align: center;
-                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
-                letterSpacing: 8;;
-                value: VÉNUS
+                letterSpacing: 8;
+                value: Vénus
 
                 Massa: 4,8675 x 10^24 kg
                 Diâmetro: 12 104 km 
@@ -205,24 +204,19 @@
                 loop: true; 
                 dur: 20000; 
                 easing: linear"> </a-sphere>
-
             <!--LUA-->
             <a-sphere id="moon" src="#moon" radius="4" position="67 6 -10" scale=" 0.15 0.15 0.15">
             </a-sphere>
+        </a-entity>
+        <!-- CARACTERISTICAS - TERRA -->
+        <a-entity id="earthDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
+                negate:false;
+                width: 100;
 
-            <!--SATÉLITE-->
-            <a-entity gltf-model="#satelite" scale="9 9 9" position="53 -4 -13"></a-entity>
-            </a-entity>
-
-            <!-- CARACTERISTICAS - TERRA -->
-            <a-entity id="earthDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-                material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
-                width: 100; 
-        
                 color: #000;
                 align: center;
-                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
-                letterSpacing: 8;;
+                letterSpacing: 8;
                 value: TERRA
 
                 Massa: 5,97237 x 10^24 kg
@@ -232,38 +226,38 @@
                 Rotação: 24 horas 
                 Translação: 365/366 dias 
                 Luas: 1 
-                Composição básica da atmosfera: nitrogénio e oxigénio" visible="false"
-                event-set__ResetVisibilidade="_event: click; visible: false">
-            </a-entity>
+                Composição básica da atmosfera: nitrogênio e oxigênio" visible="false"
+            event-set__ResetVisibilidade="_event: click; visible: false">
+        </a-entity>
 
 
-            <!--MARTE-->
-            <a-entity position="-20 -10 -35" animation="property: rotation;
+        <!--MARTE-->
+        <a-entity position="-20 -10 -35" animation="property: rotation;
             to: 0 360 0;
             loop: true;
             dur: 65000;
             easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #marsDescription; visible: true">
-                <a-sphere id="mars" src="#mars" radius="6" position="80 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere id="mars" src="#mars" radius="6" position="80 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 15000;
                 easing: linear">
-                </a-sphere>
-                <!--LUAS-->
-                <a-sphere id="moon_mars" src="#moon_mars" radius="4" position="83 5 -10" scale=" 0.17 0.17 0.17">
-                </a-sphere>
-                <a-sphere id="moon" src="#moon2_mars" radius="4" position="76 2 -10" scale=" 0.15 0.15 0.15">
-                </a-sphere>
-            </a-entity>
-            <!-- CARACTERISTICAS - MARTE -->
-            <a-entity id="earthDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-                material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
-                width: 100; 
-        
+            </a-sphere>
+            <!--LUAS-->
+            <a-sphere id="moon_mars" src="#moon_mars" radius="4" position="83 5 -10" scale=" 0.17 0.17 0.17">
+            </a-sphere>
+            <a-sphere id="moon" src="#moon2_mars" radius="4" position="76 2 -10" scale=" 0.15 0.15 0.15">
+            </a-sphere>
+        </a-entity>
+        <!-- CARACTERISTICAS - MARTE -->
+        <a-entity id="earthDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
+                negate:false;
+                width: 100;
+
                 color: #000;
                 align: center;
-                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
-                letterSpacing: 8;;
+                letterSpacing: 8;
                 value: MARTE
 
                 Massa: 6,418 x 10^23 kg
@@ -274,40 +268,38 @@
                 Translação: 687 dias terrestres 
                 Luas: 2
                 Composição básica da atmosfera: dióxido de carbono, nitrogénio e oxigénio" visible="false"
-                event-set__ResetVisibilidade="_event: click; visible: false">
-            </a-entity>
+            event-set__ResetVisibilidade="_event: click; visible: false">
+        </a-entity>
 
 
-            <!--JÚPITER-->
-            <a-entity position="-20 -10 -35" animation="property: rotation;
+        <!--JÚPITER-->
+        <a-entity position="-20 -10 -35" animation="property: rotation;
         to: 0 360 0;
         loop: true;
         dur: 95000;
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #jupiterDescription; visible: true">
-                <a-sphere id="jupiter" src="#jupiter" radius="17" position="99 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere id="jupiter" src="#jupiter" radius="17" position="99 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 60000;
                 easing: linear">
-                    </a-light>
-                </a-sphere>
-                <!--LUAS-->
-                <a-sphere id="io" src="#io" radius="4" position="99 18 -15" scale=" 0.20 0.20 0.20"></a-sphere>
-                <a-sphere id="europa" src="#europa" radius="4" position="90 10 -10" scale=" 0.10 0.10 0.10"></a-sphere>
-                <a-sphere id="ganymede" src="#ganymede" radius="4" position="108 5 -20" scale=" 0.32 0.32 0.32">
-                </a-sphere>
-                <a-sphere id="callisto" src="#callisto" radius="4" position="90 -10 -10" scale=" 0.15 0.15 0.15">
-                </a-sphere>
-            </a-entity>
-            <!-- CARACTERISTICAS - JÚPITER -->
-            <a-entity id="jupiterDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-                material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
-                width: 100; 
-        
+                </a-light>
+            </a-sphere>
+            <!--LUAS-->
+            <a-sphere id="io" src="#io" radius="4" position="99 18 -15" scale=" 0.20 0.20 0.20"></a-sphere>
+            <a-sphere id="europa" src="#europa" radius="4" position="90 10 -10" scale=" 0.10 0.10 0.10"></a-sphere>
+            <a-sphere id="ganymede" src="#ganymede" radius="4" position="108 5 -20" scale=" 0.32 0.32 0.32"></a-sphere>
+            <a-sphere id="callisto" src="#callisto" radius="4" position="90 -10 -10" scale=" 0.15 0.15 0.15"></a-sphere>
+        </a-entity>
+        <!-- CARACTERISTICAS - JÚPITER -->
+        <a-entity id="jupiterDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
+                negate:false;
+                width: 100;
+
                 color: #000;
                 align: center;
-                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
-                letterSpacing: 8;;
+                letterSpacing: 8;
                 value: JÚPITER
 
                 Massa: 1898,6 x 10^24 kg
@@ -318,43 +310,43 @@
                 Translação: 12 anos
                 Luas: 63 (Conhecidas: Io, Europa, Ganimedes e Calisto)
                 Composição básica da atmosfera: hidrogénio e hélio" visible="false"
-                event-set__ResetVisibilidade="_event: click; visible: false">
-            </a-entity>
+            event-set__ResetVisibilidade="_event: click; visible: false">
+        </a-entity>
 
 
-            <!--SATURNO-->
-            <a-entity position="-20 -10 -35" animation="property: rotation;
+        <!--SATURNO-->
+        <a-entity position="-20 -10 -35" animation="property: rotation;
         to: 0 360 0;
         loop: true;
         dur: 105000;
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #saturnDescription; visible: true">
-                <a-sphere id="saturn" src="#saturn" radius="15" position="130 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere id="saturn" src="#saturn" radius="15" position="130 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 65000;
                 easing: linear">
-                </a-sphere>
-                <!--LUA-->
-                <a-sphere id="titan" src="#titan" normal-scale="1 -1" radius="4" position="131  3 0"
-                    scale=" 0.30 0.30 0.30">
-                </a-sphere>
+            </a-sphere>
+            <!--LUA-->
+            <a-sphere id="titan" src="#titan" normal-scale="1 -1" radius="4" position="131  3 0"
+                scale=" 0.30 0.30 0.30">
+            </a-sphere>
 
-                <!--ARCO GRANDE-->
-                <a-entity geometry="primitive: torus; radius: 11; radiusTubular: 0.5;segmentsTubular: 50"
-                    material="color: #57524A;" position="130 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>
-                <!--ARCO PEQUENO-->
-                <a-entity geometry="primitive: torus; radius: 13; radiusTubular: 0.5;segmentsTubular: 50"
-                    material="color: #A29A87;" position="130 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>
-            </a-entity>
-            <!-- CARACTERISTICAS - SATURNO -->
-            <a-entity id="saturnDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-                material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
-                width: 100; 
-        
+            <!--ARCO GRANDE-->
+            <a-entity geometry="primitive: torus; radius: 11; radiusTubular: 0.5;segmentsTubular: 50"
+                material="color: #57524A;" position="130 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+            <!--ARCO PEQUENO-->
+            <a-entity geometry="primitive: torus; radius: 13; radiusTubular: 0.5;segmentsTubular: 50"
+                material="color: #A29A87;" position="130 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>
+        </a-entity>
+        <!-- CARACTERISTICAS - SATURNO -->
+        <a-entity id="saturnDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
+                negate:false;
+                width: 100;
+
                 color: #000;
                 align: center;
-                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
-                letterSpacing: 8;;
+                letterSpacing: 8;
                 value: SATURNO
 
                 Massa: 568,46 x 10^24 kg
@@ -365,36 +357,36 @@
                 Translação: 29 anos, 167 dias e 6 horas terrestres
                 Luas: 60 (Conhecida: Titã)
                 Composição básica da atmosfera: hidrogénio, hélio, metano, 
-                vapor d'água, amônia, etano e fósforo" visible="false"
-                event-set__ResetVisibilidade="_event: click; visible: false">
-            </a-entity>
+                vapor d'água, amónia, etano e fósforo" visible="false"
+            event-set__ResetVisibilidadeSat="_event: click; visible: false">
+        </a-entity>
 
 
-            <!--URANO-->
-            <a-entity position="-20 -10 -35" animation="property: rotation;
+        <!--URANO-->
+        <a-entity position="-20 -10 -35" animation="property: rotation;
         to: 0 360 0;
         loop: true;
         dur: 115000;
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #uranusDescription; visible: true">
-                <a-sphere id="uranus" src="#uranus" radius="14" position="160 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere id="uranus" src="#uranus" radius="14" position="160 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 70000;
                 easing: linear">
-                </a-sphere>
-                <!--ARCO-->
-                <a-entity geometry="primitive: torus; radius: 12; radiusTubular: 0.02;segmentsTubular: 50"
-                    material="color: #FFFFFF;" position="160 0 -10" rotation="-10 90 0" scale="1 1 0.1"></a-entity>
-            </a-entity>
-            <!-- CARACTERISTICAS - URANO -->
-            <a-entity id="uranusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-                material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
-                width: 100; 
-        
+            </a-sphere>
+            <!--ARCO-->
+            <a-entity geometry="primitive: torus; radius: 12; radiusTubular: 0.02;segmentsTubular: 50"
+                material="color: #FFFFFF;" position="160 0 -10" rotation="-10 90 0" scale="1 1 0.1"></a-entity>
+        </a-entity>
+        <!-- CARACTERISTICAS - URANO -->
+        <a-entity id="uranusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
+                negate:false;
+                width: 100;
+
                 color: #000;
                 align: center;
-                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
-                letterSpacing: 8;;
+                letterSpacing: 8;
                 value: URANO
 
                 Massa: 86,810 x 10^24 kg
@@ -405,43 +397,43 @@
                 Translação: 84,01 anos
                 Luas: 27 
                 Composição básica da atmosfera: hidrogénio, hélio e metano" visible="false"
-                event-set__ResetVisibilidade="_event: click; visible: false">
-            </a-entity>
+            event-set__ResetVisibilidade="_event: click; visible: false">
+        </a-entity>
 
 
-            <!--NEPTUNO-->
-            <a-entity position="-20 -10 -35" animation="property: rotation;
+        <!--NEPTUNO-->
+        <a-entity position="-20 -10 -35" animation="property: rotation;
         to: 0 360 0;
         loop: true;
         dur: 135000;
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #neptuneDescription; visible: true">
-                <a-sphere id="neptune" src="#neptune" radius="13" segments-height="84" position="186 0 -10"
-                    scale=" 0.5 0.5 0.5" animation="property: rotation;
+            <a-sphere id="neptune" src="#neptune" radius="13" segments-height="84" position="186 0 -10"
+                scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 75000;
                 easing: linear">
-                </a-sphere>
-                <!--ARCOS-->
-                <a-entity geometry="primitive: torus; radius: 10; radiusTubular: 0.01;segmentsTubular: 50"
-                    material="color: #FFFFFF;opacity: 0.5" position="186 0 -10" rotation="45 45 45" scale="1 1 0.1">
-                </a-entity>
-                <a-entity geometry="primitive: torus; radius: 9.7; radiusTubular: 0.05;segmentsTubular: 50"
-                    material="color: #FFFFFF;opacity: 0.5" position="186 0 -10" rotation="45 45 45" scale="1 1 0.1">
-                </a-entity>
-                <a-entity geometry="primitive: torus; radius: 9.3; radiusTubular: 0.01;segmentsTubular: 50"
-                    material="color: #FFFFFF;opacity: 0.8" position="186 0 -10" rotation="45 45 45" scale="1 1 0.1">
-                </a-entity>
+            </a-sphere>
+            <!--ARCOS-->
+            <a-entity geometry="primitive: torus; radius: 10; radiusTubular: 0.01;segmentsTubular: 50"
+                material="color: #FFFFFF;opacity: 0.5" position="186 0 -10" rotation="45 45 45" scale="1 1 0.1">
             </a-entity>
-            <!-- CARACTERISTICAS - NEPTUNO -->
-            <a-entity id="neptuneDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-                material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
-                width: 100; 
-        
+            <a-entity geometry="primitive: torus; radius: 9.7; radiusTubular: 0.05;segmentsTubular: 50"
+                material="color: #FFFFFF;opacity: 0.5" position="186 0 -10" rotation="45 45 45" scale="1 1 0.1">
+            </a-entity>
+            <a-entity geometry="primitive: torus; radius: 9.3; radiusTubular: 0.01;segmentsTubular: 50"
+                material="color: #FFFFFF;opacity: 0.8" position="186 0 -10" rotation="45 45 45" scale="1 1 0.1">
+            </a-entity>
+        </a-entity>
+        <!-- CARACTERISTICAS - NEPTUNO -->
+        <a-entity id="neptuneDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
+                negate:false;
+                width: 100;
+
                 color: #000;
                 align: center;
-                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
-                letterSpacing: 8;;
+                letterSpacing: 8;
                 value: NEPTUNO
 
                 Massa: 102,43 x 10^24
@@ -451,28 +443,28 @@
                 Rotação: 16,11 horas 
                 Translação: 165 anos
                 Luas: 13 
-                Composição básica da atmosfera: hidrogénio, hélio e metano" visible="false"
-                event-set__ResetVisibilidade="_event: click; visible: false">
-            </a-entity>
+                Composição básica da atmosfera: hidrogênio, hélio e metano" visible="false"
+            event-set__ResetVisibilidade="_event: click; visible: false">
+        </a-entity>
 
 
-            <!--ORBITAS DE CADA PLANETA-->
-            <a-entity geometry="primitive: torus; radius: 24; radiusTubular: 0.03;segmentsTubular: 50"
-                material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
-            <a-entity geometry="primitive: torus; radius: 39; radiusTubular: 0.03;segmentsTubular: 50"
-                material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
-            <a-entity geometry="primitive: torus; radius: 60; radiusTubular: 0.03;segmentsTubular: 50"
-                material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
-            <a-entity geometry="primitive: torus; radius: 81; radiusTubular: 0.03;segmentsTubular: 50"
-                material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
-            <a-entity geometry="primitive: torus; radius: 99; radiusTubular: 0.03;segmentsTubular: 50"
-                material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
-            <a-entity geometry="primitive: torus; radius:130; radiusTubular: 0.03;segmentsTubular: 50"
-                material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
-            <a-entity geometry="primitive: torus; radius: 161; radiusTubular: 0.03;segmentsTubular: 50"
-                material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
-            <a-entity geometry="primitive: torus; radius: 186.5; radiusTubular: 0.03;segmentsTubular: 50"
-                material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
+        <!--ORBITAS DE CADA PLANETA-->
+        <a-entity geometry="primitive: torus; radius: 24; radiusTubular: 0.03;segmentsTubular: 50"
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
+        <a-entity geometry="primitive: torus; radius: 39; radiusTubular: 0.03;segmentsTubular: 50"
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
+        <a-entity geometry="primitive: torus; radius: 60; radiusTubular: 0.03;segmentsTubular: 50"
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
+        <a-entity geometry="primitive: torus; radius: 81; radiusTubular: 0.03;segmentsTubular: 50"
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
+        <a-entity geometry="primitive: torus; radius: 99; radiusTubular: 0.03;segmentsTubular: 50"
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
+        <a-entity geometry="primitive: torus; radius:130; radiusTubular: 0.03;segmentsTubular: 50"
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
+        <a-entity geometry="primitive: torus; radius: 161; radiusTubular: 0.03;segmentsTubular: 50"
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
+        <a-entity geometry="primitive: torus; radius: 186.5; radiusTubular: 0.03;segmentsTubular: 50"
+            material="color: gray;opacity: 1.0" position="-20 -10 -35" rotation="90 0 0" scale="1 1 1"></a-entity>
 
     </a-scene>
 </body>
