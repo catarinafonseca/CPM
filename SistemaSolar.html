@@ -38,7 +38,6 @@
             <!--TEXTURAS-->
             <img id="paper-normal" src="images/papel_normal.jpg">
 
-
             <audio id="som" src="som/space_sound.mp3"></audio>
         </a-assets>
 
@@ -60,7 +59,6 @@
             value:Sistema Solar ">
         </a-entity>
 
-
         <!--ÁUDIO-->
         <a-entity id="coluna" 
         position="-7 0 40" sound="src: #som; autoplay: true; loop:true"
@@ -73,7 +71,6 @@
         easing: linear"
         ></a-entity>
 
-
         <!-- Ponto de luz-->
         <a-light type="ambient" color="#c0c0c0" intensity="0.5" position="-21 -10 -35">
 
@@ -82,7 +79,6 @@
         <!-- Ponto de luz-->
         <a-light type="point" color="#F2EF89" intensity="1" target="#sun">
         </a-light>
-
 
         <!--PLANETAS-->
 
@@ -105,9 +101,10 @@
    
             color: #000;
             align: center;
-            letterSpacing: 8;
+            font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+            letterSpacing: 8;;
             value:SOL
-           
+            
             Massa: 1,98892 x 10^30 kg
             Diâmetro: 1 391 000 km
             Raio: 695 500 km
@@ -143,10 +140,11 @@
     
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: MERCÚRIO
             
-                Massa: 3,302 x 10^23 kg
+                Massa:  3,302 x 10^23 kg
                 Diâmetro: 4 878 km
                 Raio: 2 439 km
                 Volume: 6.083 x 10^10 km^3
@@ -155,7 +153,6 @@
                 Luas: nenhuma 
                 Composição: hélio, sódio e oxigénio.">
         </a-entity>
-
 
         <!--VÉNUS-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
@@ -179,19 +176,19 @@
 
                 color: #000;
                 align: center;
-                letterSpacing: 8;
-                value: Vénus
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
+                value: VÉNUS
 
                 Massa: 4,8675 x 10^24 kg
                 Diâmetro: 12 104 km 
                 Raio: 6 052 km
-                Volume: 9.2843 x 10^11 km^3
+                Volume: 9.2843*10^11 km^3
                 Rotação: 243 dias terrestres
                 Translação: 224 dias
                 Luas: nenhuma 
                 Composição: dióxido de carbono e nitrogénio">
         </a-entity>
-
 
         <!--TERRA-->
         <a-entity position="-20 -10 -35" animation="property: rotation; 
@@ -221,7 +218,8 @@
 
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: TERRA
 
                 Massa: 5,97237 x 10^24 kg
@@ -233,7 +231,6 @@
                 Luas: 1 
                 Composição: nitrogénio e oxigénio">
         </a-entity>
-
 
         <!--MARTE-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
@@ -264,7 +261,8 @@
 
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: MARTE
 
                 Massa: 6,418 x 10^23 kg
@@ -276,7 +274,6 @@
                 Luas: 2
                 Composição: dióxido de carbono, nitrogénio e oxigénio">
         </a-entity>
-
 
         <!--JÚPITER-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
@@ -308,7 +305,8 @@
 
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: JÚPITER
 
                 Massa: 1898,6 x 10^24 kg
@@ -321,7 +319,6 @@
                 Europa, Ganimedes e Calisto)
                 Composição: hidrogénio e hélio">
         </a-entity>
-
 
         <!--SATURNO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
@@ -358,7 +355,8 @@
 
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: SATURNO
 
                 Massa: 568,46 x 10^24 kg
@@ -369,10 +367,9 @@
                 Translação: 29 anos, 167 dias e 6 horas terrestres
                 Luas: 60 (Conhecida: Titã)
                 Composição: hidrogénio, hélio, 
-                metano, vapor d'água, amónia, 
+                metano, vapor de água, amónia, 
                 etano e fósforo">
         </a-entity>
-
 
         <!--URANO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
@@ -381,7 +378,7 @@
         dur: 115000;
         easing: linear" event-set__AlteraVisibilidadeUrano="_event: click; _target: #uranusDescription; visible: true">
             <a-sphere id="uranus" src="#uranus" radius="14" position="160 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
-                to: 0 360 0;
+                to: 0 -360 0;
                 loop: true;
                 dur: 70000;
                 easing: linear">
@@ -400,7 +397,8 @@
 
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: URANO
 
                 Massa: 86,810 x 10^24 kg
@@ -412,7 +410,6 @@
                 Luas: 27 
                 Composição: hidrogénio, hélio e metano">
         </a-entity>
-
 
         <!--NEPTUNO-->
         <a-entity position="-20 -10 -35" animation="property: rotation;
@@ -449,7 +446,8 @@
 
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: NEPTUNO
 
                 Massa: 102,43 x 10^24
@@ -459,9 +457,8 @@
                 Rotação: 16,11 horas 
                 Translação: 165 anos
                 Luas: 13 
-                Composição: hidrogênio, hélio e metano">
+                Composição: hidrogénio, hélio e metano">
         </a-entity>
-
 
         <!--ORBITAS DE CADA PLANETA-->
         <a-entity geometry="primitive: torus; radius: 24; radiusTubular: 0.03;segmentsTubular: 50"
@@ -485,3 +482,4 @@
 </body>
 
 </html>
+
