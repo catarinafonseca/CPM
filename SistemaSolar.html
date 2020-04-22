@@ -25,7 +25,6 @@
             <img id="uranus" src="images/uranus.jpg">
             <img id="venus" src="images/venus.jpg">
             <img id="jupiter" src="images/jupiter.jpg">
-            <img id="saturn-ring" src="images/saturn_ring.png">
             <img id="milky_way" src="images/stars_milky_way.jpg">
             <img id="mercury" src="images/mercury.jpg">
             <img id="titan" src="images/titan.jpg">
@@ -35,6 +34,7 @@
             <img id="ganymede" src="images/ganymede.jpg">
             <img id="moon_mars" src="images/moon_mars.jpg">
             <img id="moon2_mars" src="images/moon2_mars.jpg">
+            <a-asset-item id="satelite" src="satellite/scene.gltf"></a-asset-item>
             <!--TEXTURAS-->
             <img id="paper-normal" src="images/papel_normal.jpg">
 
@@ -43,14 +43,12 @@
         </a-assets>
 
         <!--FUNDO-->
-        <!-- Camera          -7 0 100     -21 40 -35      110 0 20-->
-        <a-entity position="-7 0 100">
-            <a-camera>
-                <!--CURSOR-->
-                <a-entity cursor="" position="0 0 -1" geometry="primitive: sphere; radius: 0.005"
-                    material="color: #0FC0FC; shader: flat; opacity: 1" raycaster="">
-                </a-entity>
-            </a-camera>
+        <!-- Camera -->
+        <a-entity camera look-controls wasd-controls="acceleration:100" position="-7 0 100">
+            <!--CURSOR-->
+            <a-entity cursor="" position="0 0 -1" geometry="primitive: sphere; radius: 0.005"
+                material="color: #0FC0FC; shader: flat; opacity: 1" raycaster="">
+            </a-entity>
         </a-entity>
         <a-sky src="#milky_way"></a-sky>
 
@@ -63,7 +61,7 @@
         </a-entity>
 
 
-        <!--ÁUDIO
+        <!--ÁUDIO-->
         <a-entity id="coluna" 
         position="-7 0 40" sound="src: #som; autoplay: true; loop:true"
         animation="property: position;
@@ -73,9 +71,8 @@
         loop:true;
         dir: alternate;
         easing: linear"
-        ></a-entity>-->
+        ></a-entity>
 
-        <!--SATÉLITE-->
 
         <!-- Ponto de luz-->
         <a-light type="ambient" color="#c0c0c0" intensity="0.5" position="-21 -10 -35">
@@ -90,17 +87,21 @@
         <!--PLANETAS-->
 
         <!--SOL-->
-        <a-sphere id="sun" src="#sun" radius="16" segments-height="84" position="-21 -10 -35" animation="property: rotation;
-        to: 0 -360 0;
-        loop: true;
-        dur: 65000;
-        easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #sunDescription; visible: true">
-        </a-sphere>
+        <a-entity event-set__AlteraVisibilidadeSol="_event: click; _target: #sunDescription ; visible: true">
+            <a-sphere id="sun" src="#sun" radius="16" segments-height="84" position="-21 -10 -35" animation="property: rotation;
+                to: 0 -360 0;
+                loop: true;
+                dur: 65000;
+                easing: linear">
+            </a-sphere>
+        </a-entity>
         <!-- CARACTERISTICAS - SOL -->
         <a-entity id="sunDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" visible="false"
+            event-set__apagaSol="_event: click; _target: #sunDescription; position: 190 6000 -35" text="font: fonts/ARI-msdf.json;
             negate:false;
             width: 100;
+            z-offset: 1;
    
             color: #000;
             align: center;
@@ -114,10 +115,8 @@
             Rotação: 28 dias
             Translação: 200 milhões de anos
             Composição: hidrogénio, hélio, 
-            ferro, níquel, oxigénio e silício." visible="false" event-set__ResetVisibilidade="_event: click; visible: false">
+            ferro, níquel, oxigénio e silício.">
         </a-entity>
-
-        <!-- -->
 
 
         <!--MERCÚRIO-->
@@ -125,20 +124,22 @@
         to: 0 360 0;
         loop: true;
         dur: 30000;
-        easing: linear">
+        easing: linear"
+            event-set__AlteraVisibilidadeMercurio="_event: click; _target: #mercuryDescription; visible: true">
             <a-sphere id="mercury" src="#mercury" radius="5" position="22 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
                 dur: 40000;
-                easing: linear"
-                event-set__AlteraVisibilidade="_event: click; _target: #mercuryDescription; visible: true">
+                easing: linear">
             </a-sphere>
         </a-entity>
         <!-- CARACTERISTICAS - MERCÚRIO -->
-        <a-entity id="mercuryDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+        <a-entity id="mercuryDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35" visible="false"
+            event-set__apagaMercurio="_event: click; _target: #mercuryDescription; position: 190 7000 -35"
             material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
                 negate:false;
                 width: 100;
+                z-offset: 1;
     
                 color: #000;
                 align: center;
@@ -152,10 +153,8 @@
                 Rotação: 58 horas
                 Translação: 88 dias 
                 Luas: nenhuma 
-                Composição: hélio, sódio e oxigénio." visible="false"
-            event-set__ResetVisibilidade="_event: click; visible: false">
+                Composição: hélio, sódio e oxigénio.">
         </a-entity>
-
 
 
         <!--VÉNUS-->
@@ -163,18 +162,20 @@
         to: 0 360 0;
         loop: true;
         dur: 40000;
-        easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #venusDescription; visible: true">
-            <a-sphere id="venus" src="#venus" radius="11" position="38 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation; 
+        easing: linear" event-set__AlteraVisibilidadeVenus="_event: click; _target: #venusDescription; visible: true">
+            <a-sphere id="venus" src="#venus" radius="11" position="38 0 -10" scale="0.5 0.5 0.5" animation="property: rotation; 
                 to: 0 -360 0; 
                 loop: true; 
                 dur: 40000; 
                 easing: linear"> </a-sphere>
         </a-entity>
         <!-- CARACTERISTICAS - VÉNUS -->
-        <a-entity id="venusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+        <a-entity id="venusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35" visible="false"
+            event-set__apagaVenus="_event: click; _target: #venusDescription; visible: false; position: 190 8000 -35"
             material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
                 negate:false;
                 width: 100;
+                z-offset: 1;
 
                 color: #000;
                 align: center;
@@ -188,8 +189,7 @@
                 Rotação: 243 dias terrestres
                 Translação: 224 dias
                 Luas: nenhuma 
-                Composição: dióxido de carbono e nitrogénio" visible="false"
-            event-set__ResetVisibilidade="_event: click; visible: false">
+                Composição: dióxido de carbono e nitrogénio">
         </a-entity>
 
 
@@ -198,7 +198,8 @@
             to: 0 360 0; 
             loop: true; 
             dur: 50000; 
-            easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #earthDescription; visible: true">
+            easing: linear"
+            event-set__AlteraVisibilidadeTerra="_event: click; _target: #earthDescription; visible: true">
             <a-sphere id="earth" src="#earth" radius="12" position="60 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation; 
                 to: 0 -360 0; 
                 loop: true; 
@@ -207,12 +208,16 @@
             <!--LUA-->
             <a-sphere id="moon" src="#moon" radius="4" position="67 6 -10" scale=" 0.15 0.15 0.15">
             </a-sphere>
+            <!--SATÉLITE-->
+            <a-entity gltf-model="#satelite" scale="10 10 10" position="53 -6 -10"></a-entity>
         </a-entity>
         <!-- CARACTERISTICAS - TERRA -->
-        <a-entity id="earthDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+        <a-entity id="earthDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35" visible="false"
+            event-set__apagaTerra="_event: click; _target: #earthDescription; visible: false; position: 190 9000 -35"
             material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
                 negate:false;
                 width: 100;
+                z-offset: 1;
 
                 color: #000;
                 align: center;
@@ -226,8 +231,7 @@
                 Rotação: 24 horas 
                 Translação: 365/366 dias 
                 Luas: 1 
-                Composição: nitrogénio e oxigénio" visible="false"
-            event-set__ResetVisibilidade="_event: click; visible: false">
+                Composição: nitrogénio e oxigénio">
         </a-entity>
 
 
@@ -236,7 +240,8 @@
             to: 0 360 0;
             loop: true;
             dur: 65000;
-            easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #marsDescription; visible: true">
+            easing: linear"
+            event-set__AlteraVisibilidadeMarte="_event: click; _target: #marsDescription; visible: true">
             <a-sphere id="mars" src="#mars" radius="6" position="80 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
@@ -250,10 +255,12 @@
             </a-sphere>
         </a-entity>
         <!-- CARACTERISTICAS - MARTE -->
-        <a-entity id="marsDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+        <a-entity id="marsDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35" visible="false"
+            event-set__apagaMarte="_event: click; _target: #marsDescription; visible: false; position: 190 10000 -35"
             material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
                 negate:false;
                 width: 100;
+                z-offset: 1;
 
                 color: #000;
                 align: center;
@@ -267,8 +274,7 @@
                 Rotação: 24h 37min
                 Translação: 687 dias terrestres 
                 Luas: 2
-                Composição: dióxido de carbono, nitrogénio e oxigénio" visible="false"
-            event-set__ResetVisibilidade="_event: click; visible: false">
+                Composição: dióxido de carbono, nitrogénio e oxigénio">
         </a-entity>
 
 
@@ -277,7 +283,8 @@
         to: 0 360 0;
         loop: true;
         dur: 95000;
-        easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #jupiterDescription; visible: true">
+        easing: linear"
+            event-set__AlteraVisibilidadeJupiter="_event: click; _target: #jupiterDescription; visible: true">
             <a-sphere id="jupiter" src="#jupiter" radius="17" position="99 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
@@ -292,10 +299,12 @@
             <a-sphere id="callisto" src="#callisto" radius="4" position="90 -10 -10" scale=" 0.15 0.15 0.15"></a-sphere>
         </a-entity>
         <!-- CARACTERISTICAS - JÚPITER -->
-        <a-entity id="jupiterDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+        <a-entity id="jupiterDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35" visible="false"
+            event-set__apagaJupiter="_event: click; _target: #jupiterDescription; visible: false; position: 190 11000 -35"
             material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
                 negate:false;
                 width: 100;
+                z-offset: 1;
 
                 color: #000;
                 align: center;
@@ -310,8 +319,7 @@
                 Translação: 12 anos
                 Luas: 63 (Conhecidas: Io, 
                 Europa, Ganimedes e Calisto)
-                Composição: hidrogénio e hélio" visible="false"
-            event-set__ResetVisibilidade="_event: click; visible: false">
+                Composição: hidrogénio e hélio">
         </a-entity>
 
 
@@ -320,7 +328,8 @@
         to: 0 360 0;
         loop: true;
         dur: 105000;
-        easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #saturnDescription; visible: true">
+        easing: linear"
+        event-set__AlteraVisibilidadeSaturno="_event: click; _target: #saturnDescription; visible: true">
             <a-sphere id="saturn" src="#saturn" radius="15" position="130 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
                 loop: true;
@@ -340,10 +349,12 @@
                 material="color: #A29A87;" position="130 0 -10" rotation="90 0 0" scale="1 1 0.1"></a-entity>
         </a-entity>
         <!-- CARACTERISTICAS - SATURNO -->
-        <a-entity id="saturnDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+        <a-entity id="saturnDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35" visible="false"
+            event-set__apagaSaturno="_event: click; _target: #saturnDescription; visible: false; position: 190 12000 -35"
             material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
                 negate:false;
                 width: 100;
+                z-offset: 1;
 
                 color: #000;
                 align: center;
@@ -359,8 +370,7 @@
                 Luas: 60 (Conhecida: Titã)
                 Composição: hidrogénio, hélio, 
                 metano, vapor d'água, amónia, 
-                etano e fósforo" visible="false"
-            event-set__ResetVisibilidadeSat="_event: click; visible: false">
+                etano e fósforo">
         </a-entity>
 
 
@@ -369,7 +379,7 @@
         to: 0 360 0;
         loop: true;
         dur: 115000;
-        easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #uranusDescription; visible: true">
+        easing: linear" event-set__AlteraVisibilidadeUrano="_event: click; _target: #uranusDescription; visible: true">
             <a-sphere id="uranus" src="#uranus" radius="14" position="160 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 360 0;
                 loop: true;
@@ -381,10 +391,12 @@
                 material="color: #FFFFFF;" position="160 0 -10" rotation="-10 90 0" scale="1 1 0.1"></a-entity>
         </a-entity>
         <!-- CARACTERISTICAS - URANO -->
-        <a-entity id="uranusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+        <a-entity id="uranusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35" visible="false"
+            event-set__apagaUrano="_event: click; _target: #uranusDescription; visible: false; position: 190 13000 -35"
             material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
                 negate:false;
                 width: 100;
+                z-offset: 1;
 
                 color: #000;
                 align: center;
@@ -398,8 +410,7 @@
                 Rotação: -17,9 horas 
                 Translação: 84,01 anos
                 Luas: 27 
-                Composição: hidrogénio, hélio e metano" visible="false"
-            event-set__ResetVisibilidade="_event: click; visible: false">
+                Composição: hidrogénio, hélio e metano">
         </a-entity>
 
 
@@ -408,7 +419,8 @@
         to: 0 360 0;
         loop: true;
         dur: 135000;
-        easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #neptuneDescription; visible: true">
+        easing: linear"
+            event-set__AlteraVisibilidadeNeptuno="_event: click; _target: #neptuneDescription; visible: true">
             <a-sphere id="neptune" src="#neptune" radius="13" segments-height="84" position="186 0 -10"
                 scale=" 0.5 0.5 0.5" animation="property: rotation;
                 to: 0 -360 0;
@@ -428,10 +440,12 @@
             </a-entity>
         </a-entity>
         <!-- CARACTERISTICAS - NEPTUNO -->
-        <a-entity id="neptuneDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+        <a-entity id="neptuneDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35" visible="false"
+            event-set__apagaNeptuno="_event: click; _target: #neptuneDescription; visible: false; position: 190 14000 -35"
             material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
                 negate:false;
                 width: 100;
+                z-offset: 1;
 
                 color: #000;
                 align: center;
@@ -445,8 +459,7 @@
                 Rotação: 16,11 horas 
                 Translação: 165 anos
                 Luas: 13 
-                Composição: hidrogênio, hélio e metano" visible="false"
-            event-set__ResetVisibilidade="_event: click; visible: false">
+                Composição: hidrogênio, hélio e metano">
         </a-entity>
 
 
