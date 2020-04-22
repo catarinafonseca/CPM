@@ -25,7 +25,6 @@
             <img id="uranus" src="images/uranus.jpg">
             <img id="venus" src="images/venus.jpg">
             <img id="jupiter" src="images/jupiter.jpg">
-            <img id="saturn-ring" src="images/saturn_ring.png">
             <img id="milky_way" src="images/stars_milky_way.jpg">
             <img id="mercury" src="images/mercury.jpg">
             <img id="titan" src="images/titan.jpg">
@@ -35,6 +34,7 @@
             <img id="ganymede" src="images/ganymede.jpg">
             <img id="moon_mars" src="images/moon_mars.jpg">
             <img id="moon2_mars" src="images/moon2_mars.jpg">
+            <a-asset-item id="satelite" src="satellite/scene.gltf"></a-asset-item>
             <!--TEXTURAS-->
             <img id="paper-normal" src="images/papel_normal.jpg">
 
@@ -98,26 +98,44 @@
         </a-sphere>
         <!-- CARACTERISTICAS - SOL -->
         <a-entity id="sunDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
-            negate:false;
-            width: 100;
-   
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" font=custom-msdf.json text="
+            negate:true;
+            width: 100; 
+    
             color: #000;
             align: center;
-            letterSpacing: 8;
+            font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+            letterSpacing: 8;;
             value:SOL
-           
+            
             Massa: 1,98892 x 10^30 kg
             Diâmetro: 1 391 000 km
             Raio: 695 500 km
             Volume: 1.412 x 10^18 km^3
             Rotação: 28 dias
             Translação: 200 milhões de anos
-            Composição: hidrogénio, hélio, 
-            ferro, níquel, oxigénio e silício." visible="false" event-set__ResetVisibilidade="_event: click; visible: false">
+            Composição: hidrogênio, hélio, ferro,
+            níquel, oxigênio e silício." visible="false" event-set__ResetVisibilidade="_event: click; visible: false
+            ">
         </a-entity>
 
-        <!-- -->
+        <!-- "negate:true;
+            width: 100; 
+    
+            color: #000;
+            align: center;
+            font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+            letterSpacing: 8;;
+            value:SOL
+            
+            Massa: 1,98892 x 10^30 kg
+            Diâmetro: 1 391 000 km
+            Raio: 695 500 km
+            Volume: 1.412 x 10^18 km^3
+            Rotação: 28 dias
+            Translação: 200 milhões de anos
+            Composição: hidrogênio, hélio, ferro,
+            níquel, oxigênio e silício." visible="false" event-set__ResetVisibilidade="_event: click; visible: false" -->
 
 
         <!--MERCÚRIO-->
@@ -131,28 +149,28 @@
                 loop: true;
                 dur: 40000;
                 easing: linear"
-                event-set__AlteraVisibilidade="_event: click; _target: #mercuryDescription; visible: true">
+                event-set__AlteraVisibilidade1="_event: click; _target: #mercuryDescription; visible: true">
             </a-sphere>
         </a-entity>
         <!-- CARACTERISTICAS - MERCÚRIO -->
         <a-entity id="mercuryDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
-                negate:false;
-                width: 100;
-    
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
+                width: 100; 
+        
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: MERCÚRIO
             
-                Massa: 3,302 x 10^23 kg
+                Massa:  3,302 x 10^23 kg
                 Diâmetro: 4 878 km
                 Raio: 2 439 km
                 Volume: 6.083 x 10^10 km^3
                 Rotação: 58 horas
                 Translação: 88 dias 
                 Luas: nenhuma 
-                Composição: hélio, sódio e oxigénio." visible="false"
+                Composição básica da atmosfera: hélio, sódio e oxigênio." visible="false"
             event-set__ResetVisibilidade="_event: click; visible: false">
         </a-entity>
 
@@ -172,23 +190,23 @@
         </a-entity>
         <!-- CARACTERISTICAS - VÉNUS -->
         <a-entity id="venusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
-                negate:false;
-                width: 100;
-
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
+                width: 100; 
+        
                 color: #000;
                 align: center;
-                letterSpacing: 8;
-                value: Vénus
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
+                value: VÉNUS
 
                 Massa: 4,8675 x 10^24 kg
                 Diâmetro: 12 104 km 
                 Raio: 6 052 km
-                Volume: 9.2843 x 10^11 km^3
+                Volume: 9.2843*10^11 km^3
                 Rotação: 243 dias terrestres
                 Translação: 224 dias
                 Luas: nenhuma 
-                Composição: dióxido de carbono e nitrogénio" visible="false"
+                Composição básica da atmosfera: dióxido de carbono e nitrogênio" visible="false"
             event-set__ResetVisibilidade="_event: click; visible: false">
         </a-entity>
 
@@ -207,16 +225,22 @@
             <!--LUA-->
             <a-sphere id="moon" src="#moon" radius="4" position="67 6 -10" scale=" 0.15 0.15 0.15">
             </a-sphere>
+            <a-entity
+        gltf-model="#satelite"
+        scale="0.4 0.4 0.4"
+        position="53 -6 -10"
+       
+        ></a-entity>
         </a-entity>
         <!-- CARACTERISTICAS - TERRA -->
         <a-entity id="earthDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
-                negate:false;
-                width: 100;
-
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
+                width: 100; 
+        
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: TERRA
 
                 Massa: 5,97237 x 10^24 kg
@@ -226,7 +250,7 @@
                 Rotação: 24 horas 
                 Translação: 365/366 dias 
                 Luas: 1 
-                Composição: nitrogénio e oxigénio" visible="false"
+                Composição básica da atmosfera: nitrogênio e oxigênio" visible="false"
             event-set__ResetVisibilidade="_event: click; visible: false">
         </a-entity>
 
@@ -250,14 +274,14 @@
             </a-sphere>
         </a-entity>
         <!-- CARACTERISTICAS - MARTE -->
-        <a-entity id="marsDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
-                negate:false;
-                width: 100;
-
+        <a-entity id="earthDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
+                width: 100; 
+        
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: MARTE
 
                 Massa: 6,418 x 10^23 kg
@@ -267,7 +291,7 @@
                 Rotação: 24h 37min
                 Translação: 687 dias terrestres 
                 Luas: 2
-                Composição: dióxido de carbono, nitrogénio e oxigénio" visible="false"
+                Composição básica da atmosfera: dióxido de carbono, nitrogênio e oxigênio" visible="false"
             event-set__ResetVisibilidade="_event: click; visible: false">
         </a-entity>
 
@@ -293,13 +317,13 @@
         </a-entity>
         <!-- CARACTERISTICAS - JÚPITER -->
         <a-entity id="jupiterDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
-                negate:false;
-                width: 100;
-
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
+                width: 100; 
+        
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: JÚPITER
 
                 Massa: 1898,6 x 10^24 kg
@@ -308,9 +332,8 @@
                 Volume: 1.4313 x 10^15 km^3
                 Rotação: 10h
                 Translação: 12 anos
-                Luas: 63 (Conhecidas: Io, 
-                Europa, Ganimedes e Calisto)
-                Composição: hidrogénio e hélio" visible="false"
+                Luas: 63 (Conhecidas: Io, Europa, Ganimedes e Calisto)
+                Composição básica da atmosfera: hidrogênio e hélio" visible="false"
             event-set__ResetVisibilidade="_event: click; visible: false">
         </a-entity>
 
@@ -341,13 +364,13 @@
         </a-entity>
         <!-- CARACTERISTICAS - SATURNO -->
         <a-entity id="saturnDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
-                negate:false;
-                width: 100;
-
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
+                width: 100; 
+        
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: SATURNO
 
                 Massa: 568,46 x 10^24 kg
@@ -357,10 +380,9 @@
                 Rotação: 10h 39min
                 Translação: 29 anos, 167 dias e 6 horas terrestres
                 Luas: 60 (Conhecida: Titã)
-                Composição: hidrogénio, hélio, 
-                metano, vapor d'água, amónia, 
-                etano e fósforo" visible="false"
-            event-set__ResetVisibilidadeSat="_event: click; visible: false">
+                Composição básica da atmosfera: hidrogênio, hélio, metano, 
+                vapor d'água, amônia, etano e fósforo" visible="false"
+            event-set__ResetVisibilidade="_event: click; visible: false">
         </a-entity>
 
 
@@ -371,7 +393,7 @@
         dur: 115000;
         easing: linear" event-set__AlteraVisibilidade="_event: click; _target: #uranusDescription; visible: true">
             <a-sphere id="uranus" src="#uranus" radius="14" position="160 0 -10" scale=" 0.5 0.5 0.5" animation="property: rotation;
-                to: 0 360 0;
+                to: 0 -360 0;
                 loop: true;
                 dur: 70000;
                 easing: linear">
@@ -382,13 +404,13 @@
         </a-entity>
         <!-- CARACTERISTICAS - URANO -->
         <a-entity id="uranusDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
-                negate:false;
-                width: 100;
-
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
+                width: 100; 
+        
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: URANO
 
                 Massa: 86,810 x 10^24 kg
@@ -398,7 +420,7 @@
                 Rotação: -17,9 horas 
                 Translação: 84,01 anos
                 Luas: 27 
-                Composição: hidrogénio, hélio e metano" visible="false"
+                Composição básica da atmosfera: hidrogênio, hélio e metano" visible="false"
             event-set__ResetVisibilidade="_event: click; visible: false">
         </a-entity>
 
@@ -429,13 +451,13 @@
         </a-entity>
         <!-- CARACTERISTICAS - NEPTUNO -->
         <a-entity id="neptuneDescription" geometry="primitive: plane; width: 100; height: 80" position="-170 60 -35"
-            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="font: fonts/ARI-msdf.json;
-                negate:false;
-                width: 100;
-
+            material="color: #D9C896; roughness:10; normal-map: #paper-normal" text="negate:true;
+                width: 100; 
+        
                 color: #000;
                 align: center;
-                letterSpacing: 8;
+                font: https://cdn.aframe.io/fonts/KelsonSans.fnt;
+                letterSpacing: 8;;
                 value: NEPTUNO
 
                 Massa: 102,43 x 10^24
@@ -445,7 +467,7 @@
                 Rotação: 16,11 horas 
                 Translação: 165 anos
                 Luas: 13 
-                Composição: hidrogênio, hélio e metano" visible="false"
+                Composição básica da atmosfera: hidrogênio, hélio e metano" visible="false"
             event-set__ResetVisibilidade="_event: click; visible: false">
         </a-entity>
 
